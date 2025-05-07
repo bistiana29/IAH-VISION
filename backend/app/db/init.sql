@@ -1,0 +1,116 @@
+
+--1. Tabel kab_kota_prov--
+CREATE TABLE kab_kota_prov (
+    id_kab_kota SERIAL PRIMARY KEY,
+    kab_kota VARCHAR(255),
+    provinsi VARCHAR(255)
+);
+
+--2. Create abel ahh--
+CREATE TABLE ahh (
+    id_ahh TEXT PRIMARY KEY,
+    id_kab_kota INTEGER REFERENCES kab_kota_prov(id_kab_kota),
+    kab_kota VARCHAR(255),
+    ahh_2010 DOUBLE PRECISION,
+    ahh_2011 DOUBLE PRECISION,
+    ahh_2012 DOUBLE PRECISION,
+    ahh_2013 DOUBLE PRECISION,
+    ahh_2014 DOUBLE PRECISION,
+    ahh_2015 DOUBLE PRECISION,
+    ahh_2017 DOUBLE PRECISION,
+    ahh_2018 DOUBLE PRECISION,
+    ahh_2019 DOUBLE PRECISION,
+    ahh_2020 DOUBLE PRECISION,
+    ahh_2021 DOUBLE PRECISION,
+    ahh_2022 DOUBLE PRECISION,
+    ahh_2023 DOUBLE PRECISION,
+    ahh_2024 DOUBLE PRECISION
+);
+
+--3. Create tabel ahs--
+CREATE TABLE ahs (
+    id_ahs TEXT PRIMARY KEY,
+    id_kab_kota INTEGER REFERENCES kab_kota_prov(id_kab_kota),
+    kab_kota VARCHAR(255),
+    ahs_2010 DOUBLE PRECISION,
+    ahs_2011 DOUBLE PRECISION,
+    ahs_2012 DOUBLE PRECISION,
+    ahs_2013 DOUBLE PRECISION,
+    ahs_2014 DOUBLE PRECISION,
+    ahs_2015 DOUBLE PRECISION,
+    ahs_2016 DOUBLE PRECISION,
+    ahs_2017 DOUBLE PRECISION,
+    ahs_2018 DOUBLE PRECISION,
+    ahs_2019 DOUBLE PRECISION,
+    ahs_2020 DOUBLE PRECISION,
+    ahs_2021 DOUBLE PRECISION,
+    ahs_2022 DOUBLE PRECISION,
+    ahs_2023 DOUBLE PRECISION,
+    ahs_2024 DOUBLE PRECISION
+);
+
+--4. Create tabel rata-rata lama sekolah--
+CREATE TABLE rls (
+    id_rls TEXT PRIMARY KEY,
+    id_kab_kota INTEGER REFERENCES kab_kota_prov(id_kab_kota),
+    kab_kota VARCHAR(255),
+    rls_2010 DOUBLE PRECISION,
+    rls_2011 DOUBLE PRECISION,
+    rls_2012 DOUBLE PRECISION,
+    rls_2013 DOUBLE PRECISION,
+    rls_2014 DOUBLE PRECISION,
+    rls_2015 DOUBLE PRECISION,
+    rls_2016 DOUBLE PRECISION,
+    rls_2017 DOUBLE PRECISION,
+    rls_2018 DOUBLE PRECISION,
+    rls_2019 DOUBLE PRECISION,
+    rls_2020 DOUBLE PRECISION,
+    rls_2021 DOUBLE PRECISION,
+    rls_2022 DOUBLE PRECISION,
+    rls_2023 DOUBLE PRECISION,
+    rls_2024 DOUBLE PRECISION
+);
+
+--5. Create tabel ipm--
+CREATE TABLE ipm (
+    id_ipm TEXT PRIMARY KEY,
+    id_kab_kota INTEGER REFERENCES kab_kota_prov(id_kab_kota),
+    kab_kota VARCHAR(255),
+    ipm_2010 DOUBLE PRECISION,
+    ipm_2011 DOUBLE PRECISION,
+    ipm_2012 DOUBLE PRECISION,
+    ipm_2013 DOUBLE PRECISION,
+    ipm_2014 DOUBLE PRECISION,
+    ipm_2015 DOUBLE PRECISION,
+    ipm_2016 DOUBLE PRECISION,
+    ipm_2017 DOUBLE PRECISION,
+    ipm_2018 DOUBLE PRECISION,
+    ipm_2019 DOUBLE PRECISION,
+    ipm_2020 DOUBLE PRECISION,
+    ipm_2021 DOUBLE PRECISION,
+    ipm_2022 DOUBLE PRECISION,
+    ipm_2023 DOUBLE PRECISION,
+    ipm_2024 DOUBLE PRECISION
+);
+
+--6. CREATE TABLE pengeluaran_perkapita--
+CREATE TABLE pengeluaran_perkapita (
+    id_prkapita TEXT PRIMARY KEY,
+    id_kab_kota INTEGER REFERENCES kab_kota_prov(id_kab_kota),
+    kab_kota VARCHAR(255),
+    pengeluaran_2010 DOUBLE PRECISION,
+    pengeluaran_2011 DOUBLE PRECISION,
+    pengeluaran_2012 DOUBLE PRECISION,
+    pengeluaran_2013 DOUBLE PRECISION,
+    pengeluaran_2014 DOUBLE PRECISION,
+    pengeluaran_2015 DOUBLE PRECISION,
+    pengeluaran_2016 DOUBLE PRECISION,
+    pengeluaran_2017 DOUBLE PRECISION,
+    pengeluaran_2018 DOUBLE PRECISION,
+    pengeluaran_2019 DOUBLE PRECISION,
+    pengeluaran_2020 DOUBLE PRECISION,
+    pengeluaran_2021 DOUBLE PRECISION,
+    pengeluaran_2022 DOUBLE PRECISION,
+    pengeluaran_2023 DOUBLE PRECISION,
+    pengeluaran_2024 DOUBLE PRECISION
+);
