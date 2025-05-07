@@ -1,0 +1,541 @@
+ID,NAMA_KAB_KOTA,PROVINSI
+1,Simeulue,Aceh
+2,Aceh Singkil,Aceh
+3,Aceh Selatan,Aceh
+4,Aceh Tenggara,Aceh
+5,Aceh Timur,Aceh
+6,Aceh Tengah,Aceh
+7,Aceh Barat,Aceh
+8,Aceh Besar,Aceh
+9,Pidie,Aceh
+10,Bireuen,Aceh
+11,Aceh Utara,Aceh
+12,Aceh Barat Daya,Aceh
+13,Gayo Lues,Aceh
+14,Aceh Tamiang,Aceh
+15,Nagan Raya,Aceh
+16,Aceh Jaya,Aceh
+17,Bener Meriah,Aceh
+18,Pidie Jaya,Aceh
+19,Kota Banda Aceh,Aceh
+20,Kota Sabang,Aceh
+21,Kota Langsa,Aceh
+22,Kota Lhokseumawe,Aceh
+23,Kota Subulussalam,Aceh
+24,Nias,Sumatera Utara
+25,Mandailing Natal,Sumatera Utara
+26,Tapanuli Selatan,Sumatera Utara
+27,Tapanuli Tengah,Sumatera Utara
+28,Tapanuli Utara,Sumatera Utara
+29,Toba Samosir / Toba,Sumatera Utara
+30,Labuhan Batu,Sumatera Utara
+31,Asahan,Sumatera Utara
+32,Simalungun,Sumatera Utara
+33,Dairi,Sumatera Utara
+34,Karo,Sumatera Utara
+35,Deli Serdang,Sumatera Utara
+36,Langkat,Sumatera Utara
+37,Nias Selatan,Sumatera Utara
+38,Humbang Hasundutan,Sumatera Utara
+39,Pakpak Bharat,Sumatera Utara
+40,Samosir,Sumatera Utara
+41,Serdang Bedagai,Sumatera Utara
+42,Batu Bara,Sumatera Utara
+43,Padang Lawas Utara,Sumatera Utara
+44,Padang Lawas,Sumatera Utara
+45,Labuhan Batu Selatan,Sumatera Utara
+46,Labuhan Batu Utara,Sumatera Utara
+47,Nias Utara,Sumatera Utara
+48,Nias Barat,Sumatera Utara
+49,Kota Sibolga,Sumatera Utara
+50,Kota Tanjung Balai,Sumatera Utara
+51,Kota Pematang Siantar,Sumatera Utara
+52,Kota Tebing Tinggi,Sumatera Utara
+53,Kota Medan,Sumatera Utara
+54,Kota Binjai,Sumatera Utara
+55,Kota Padangsidimpuan,Sumatera Utara
+56,Kota Gunungsitoli,Sumatera Utara
+57,Kepulauan Mentawai,Sumatera Barat
+58,Pesisir Selatan,Sumatera Barat
+59,Solok,Sumatera Barat
+60,Sijunjung,Sumatera Barat
+61,Tanah Datar,Sumatera Barat
+62,Padang Pariaman,Sumatera Barat
+63,Agam,Sumatera Barat
+64,Lima Puluh Kota,Sumatera Barat
+65,Pasaman,Sumatera Barat
+66,Solok Selatan,Sumatera Barat
+67,Dharmasraya,Sumatera Barat
+68,Pasaman Barat,Sumatera Barat
+69,Kota Padang,Sumatera Barat
+70,Kota Solok,Sumatera Barat
+71,Kota Sawah Lunto,Sumatera Barat
+72,Kota Padang Panjang,Sumatera Barat
+73,Kota Bukittinggi,Sumatera Barat
+74,Kota Payakumbuh,Sumatera Barat
+75,Kota Pariaman,Sumatera Barat
+76,Kuantan Singingi,Riau
+77,Indragiri Hulu,Riau
+78,Indragiri Hilir,Riau
+79,Pelalawan,Riau
+80,Siak,Riau
+81,Kampar,Riau
+82,Rokan Hulu,Riau
+83,Bengkalis,Riau
+84,Rokan Hilir,Riau
+85,Kepulauan Meranti,Riau
+86,Kota Pekanbaru,Riau
+87,Kota Dumai,Riau
+88,Kerinci,Jambi
+89,Merangin,Jambi
+90,Sarolangun,Jambi
+91,Batang Hari,Jambi
+92,Muaro Jambi,Jambi
+93,Tanjung Jabung Timur,Jambi
+94,Tanjung Jabung Barat,Jambi
+95,Tebo,Jambi
+96,Bungo,Jambi
+97,Kota Jambi,Jambi
+98,Kota Sungai Penuh,Jambi
+99,Ogan Komering Ulu,Sumatera Selatan
+100,Ogan Komering Ilir,Sumatera Selatan
+101,Muara Enim,Sumatera Selatan
+102,Lahat,Sumatera Selatan
+103,Musi Rawas,Sumatera Selatan
+104,Musi Banyuasin,Sumatera Selatan
+105,Banyu Asin,Sumatera Selatan
+106,Ogan Komering Ulu Selatan,Sumatera Selatan
+107,Ogan Komering Ulu Timur,Sumatera Selatan
+108,Ogan Ilir,Sumatera Selatan
+109,Empat Lawang,Sumatera Selatan
+110,Penukal Abab Lematang Ilir,Sumatera Selatan
+111,Musi Rawas Utara,Sumatera Selatan
+112,Kota Palembang,Sumatera Selatan
+113,Kota Prabumulih,Sumatera Selatan
+114,Kota Pagar Alam,Sumatera Selatan
+115,Kota Lubuklinggau,Sumatera Selatan
+116,Bengkulu Selatan,Bengkulu
+117,Rejang Lebong,Bengkulu
+118,Bengkulu Utara,Bengkulu
+119,Kaur,Bengkulu
+120,Seluma,Bengkulu
+121,Mukomuko,Bengkulu
+122,Lebong,Bengkulu
+123,Kepahiang,Bengkulu
+124,Bengkulu Tengah,Bengkulu
+125,Kota Bengkulu,Bengkulu
+126,Lampung Barat,Lampung
+127,Tanggamus,Lampung
+128,Lampung Selatan,Lampung
+129,Lampung Timur,Lampung
+130,Lampung Tengah,Lampung
+131,Lampung Utara,Lampung
+132,Way Kanan,Lampung
+133,Tulangbawang,Lampung
+134,Pesawaran,Lampung
+135,Pringsewu,Lampung
+136,Mesuji,Lampung
+137,Tulang Bawang Barat,Lampung
+138,Pesisir Barat,Lampung
+139,Kota Bandar Lampung,Lampung
+140,Kota Metro,Lampung
+141,Bangka,Kep. Bangka Belitung
+142,Belitung,Kep. Bangka Belitung
+143,Bangka Barat,Kep. Bangka Belitung
+144,Bangka Tengah,Kep. Bangka Belitung
+145,Bangka Selatan,Kep. Bangka Belitung
+146,Belitung Timur,Kep. Bangka Belitung
+147,Kota Pangkal Pinang,Kep. Bangka Belitung
+148,Karimun,Kepulauan Riau
+149,Bintan,Kepulauan Riau
+150,Natuna,Kepulauan Riau
+151,Lingga,Kepulauan Riau
+152,Kepulauan Anambas,Kepulauan Riau
+153,Kota Batam,Kepulauan Riau
+154,Kota Tanjung Pinang,Kepulauan Riau
+155,Kep. Seribu,DKI Jakarta
+156,Kota Jakarta Selatan,DKI Jakarta
+157,Kota Jakarta Timur,DKI Jakarta
+158,Kota Jakarta Pusat,DKI Jakarta
+159,Kota Jakarta Barat,DKI Jakarta
+160,Kota Jakarta Utara,DKI Jakarta
+161,Bogor,Jawa Barat
+162,Sukabumi,Jawa Barat
+163,Cianjur,Jawa Barat
+164,Bandung,Jawa Barat
+165,Garut,Jawa Barat
+166,Tasikmalaya,Jawa Barat
+167,Ciamis,Jawa Barat
+168,Kuningan,Jawa Barat
+169,Cirebon,Jawa Barat
+170,Majalengka,Jawa Barat
+171,Sumedang,Jawa Barat
+172,Indramayu,Jawa Barat
+173,Subang,Jawa Barat
+174,Purwakarta,Jawa Barat
+175,Karawang,Jawa Barat
+176,Bekasi,Jawa Barat
+177,Bandung Barat,Jawa Barat
+178,Pangandaran,Jawa Barat
+179,Kota Bogor,Jawa Barat
+180,Kota Sukabumi,Jawa Barat
+181,Kota Bandung,Jawa Barat
+182,Kota Cirebon,Jawa Barat
+183,Kota Bekasi,Jawa Barat
+184,Kota Depok,Jawa Barat
+185,Kota Cimahi,Jawa Barat
+186,Kota Tasikmalaya,Jawa Barat
+187,Kota Banjar,Jawa Barat
+188,Cilacap,Jawa Tengah
+189,Banyumas,Jawa Tengah
+190,Purbalingga,Jawa Tengah
+191,Banjarnegara,Jawa Tengah
+192,Kebumen,Jawa Tengah
+193,Purworejo,Jawa Tengah
+194,Wonosobo,Jawa Tengah
+195,Magelang,Jawa Tengah
+196,Boyolali,Jawa Tengah
+197,Klaten,Jawa Tengah
+198,Sukoharjo,Jawa Tengah
+199,Wonogiri,Jawa Tengah
+200,Karanganyar,Jawa Tengah
+201,Sragen,Jawa Tengah
+202,Grobogan,Jawa Tengah
+203,Blora,Jawa Tengah
+204,Rembang,Jawa Tengah
+205,Pati,Jawa Tengah
+206,Kudus,Jawa Tengah
+207,Jepara,Jawa Tengah
+208,Demak,Jawa Tengah
+209,Semarang,Jawa Tengah
+210,Temanggung,Jawa Tengah
+211,Kendal,Jawa Tengah
+212,Batang,Jawa Tengah
+213,Pekalongan,Jawa Tengah
+214,Pemalang,Jawa Tengah
+215,Tegal,Jawa Tengah
+216,Brebes,Jawa Tengah
+217,Kota Magelang,Jawa Tengah
+218,Kota Surakarta,Jawa Tengah
+219,Kota Salatiga,Jawa Tengah
+220,Kota Semarang,Jawa Tengah
+221,Kota Pekalongan,Jawa Tengah
+222,Kota Tegal,Jawa Tengah
+223,Kulon Progo,DI Yogyakarta
+224,Bantul,DI Yogyakarta
+225,Gunung Kidul,DI Yogyakarta
+226,Sleman,DI Yogyakarta
+227,Kota Yogyakarta,DI Yogyakarta
+228,Pacitan,Jawa Timur
+229,Ponorogo,Jawa Timur
+230,Trenggalek,Jawa Timur
+231,Tulungagung,Jawa Timur
+232,Blitar,Jawa Timur
+233,Kediri,Jawa Timur
+234,Malang,Jawa Timur
+235,Lumajang,Jawa Timur
+236,Jember,Jawa Timur
+237,Banyuwangi,Jawa Timur
+238,Bondowoso,Jawa Timur
+239,Situbondo,Jawa Timur
+240,Probolinggo,Jawa Timur
+241,Pasuruan,Jawa Timur
+242,Sidoarjo,Jawa Timur
+243,Mojokerto,Jawa Timur
+244,Jombang,Jawa Timur
+245,Nganjuk,Jawa Timur
+246,Madiun,Jawa Timur
+247,Magetan,Jawa Timur
+248,Ngawi,Jawa Timur
+249,Bojonegoro,Jawa Timur
+250,Tuban,Jawa Timur
+251,Lamongan,Jawa Timur
+252,Gresik,Jawa Timur
+253,Bangkalan,Jawa Timur
+254,Sampang,Jawa Timur
+255,Pamekasan,Jawa Timur
+256,Sumenep,Jawa Timur
+257,Kota Kediri,Jawa Timur
+258,Kota Blitar,Jawa Timur
+259,Kota Malang,Jawa Timur
+260,Kota Probolinggo,Jawa Timur
+261,Kota Pasuruan,Jawa Timur
+262,Kota Mojokerto,Jawa Timur
+263,Kota Madiun,Jawa Timur
+264,Kota Surabaya,Jawa Timur
+265,Kota Batu,Jawa Timur
+266,Pandeglang,Banten
+267,Lebak,Banten
+268,Tangerang,Banten
+269,Serang,Banten
+270,Kota Tangerang,Banten
+271,Kota Cilegon,Banten
+272,Kota Serang,Banten
+273,Kota Tangerang Selatan,Banten
+274,Jembrana,Bali
+275,Tabanan,Bali
+276,Badung,Bali
+277,Gianyar,Bali
+278,Klungkung,Bali
+279,Bangli,Bali
+280,Karangasem,Bali
+281,Buleleng,Bali
+282,Kota Denpasar,Bali
+283,Lombok Barat,Nusa Tenggara Barat
+284,Lombok Tengah,Nusa Tenggara Barat
+285,Lombok Timur,Nusa Tenggara Barat
+286,Sumbawa,Nusa Tenggara Barat
+287,Dompu,Nusa Tenggara Barat
+288,Bima,Nusa Tenggara Barat
+289,Sumbawa Barat,Nusa Tenggara Barat
+290,Lombok Utara,Nusa Tenggara Barat
+291,Kota Mataram,Nusa Tenggara Barat
+292,Kota Bima,Nusa Tenggara Barat
+293,Sumba Barat,Nusa Tenggara Timur
+294,Sumba Timur,Nusa Tenggara Timur
+295,Kupang,Nusa Tenggara Timur
+296,Timor Tengah Selatan,Nusa Tenggara Timur
+297,Timor Tengah Utara,Nusa Tenggara Timur
+298,Belu,Nusa Tenggara Timur
+299,Alor,Nusa Tenggara Timur
+300,Lembata,Nusa Tenggara Timur
+301,Flores Timur,Nusa Tenggara Timur
+302,Sikka,Nusa Tenggara Timur
+303,Ende,Nusa Tenggara Timur
+304,Ngada,Nusa Tenggara Timur
+305,Manggarai,Nusa Tenggara Timur
+306,Rote Ndao,Nusa Tenggara Timur
+307,Manggarai Barat,Nusa Tenggara Timur
+308,Sumba Tengah,Nusa Tenggara Timur
+309,Sumba Barat Daya,Nusa Tenggara Timur
+310,Nagekeo,Nusa Tenggara Timur
+311,Manggarai Timur,Nusa Tenggara Timur
+312,Sabu Raijua,Nusa Tenggara Timur
+313,Malaka,Nusa Tenggara Timur
+314,Kota Kupang,Nusa Tenggara Timur
+315,Sambas,Kalimantan Barat
+316,Bengkayang,Kalimantan Barat
+317,Landak,Kalimantan Barat
+318,Mempawah,Kalimantan Barat
+319,Sanggau,Kalimantan Barat
+320,Ketapang,Kalimantan Barat
+321,Sintang,Kalimantan Barat
+322,Kapuas Hulu,Kalimantan Barat
+323,Sekadau,Kalimantan Barat
+324,Melawi,Kalimantan Barat
+325,Kayong Utara,Kalimantan Barat
+326,Kubu Raya,Kalimantan Barat
+327,Kota Pontianak,Kalimantan Barat
+328,Kota Singkawang,Kalimantan Barat
+329,Kotawaringin Barat,Kalimantan Tengah
+330,Kotawaringin Timur,Kalimantan Tengah
+331,Kapuas,Kalimantan Tengah
+332,Barito Selatan,Kalimantan Tengah
+333,Barito Utara,Kalimantan Tengah
+334,Sukamara,Kalimantan Tengah
+335,Lamandau,Kalimantan Tengah
+336,Seruyan,Kalimantan Tengah
+337,Katingan,Kalimantan Tengah
+338,Pulang Pisau,Kalimantan Tengah
+339,Gunung Mas,Kalimantan Tengah
+340,Barito Timur,Kalimantan Tengah
+341,Murung Raya,Kalimantan Tengah
+342,Kota Palangka Raya,Kalimantan Tengah
+343,Tanah Laut,Kalimantan Selatan
+344,Kotabaru,Kalimantan Selatan
+345,Banjar,Kalimantan Selatan
+346,Barito Kuala,Kalimantan Selatan
+347,Tapin,Kalimantan Selatan
+348,Hulu Sungai Selatan,Kalimantan Selatan
+349,Hulu Sungai Tengah,Kalimantan Selatan
+350,Hulu Sungai Utara,Kalimantan Selatan
+351,Tabalong,Kalimantan Selatan
+352,Tanah Bumbu,Kalimantan Selatan
+353,Balangan,Kalimantan Selatan
+354,Kota Banjarmasin,Kalimantan Selatan
+355,Kota Banjar Baru,Kalimantan Selatan
+356,Paser,Kalimantan Timur
+357,Kutai Barat,Kalimantan Timur
+358,Kutai Kartanegara,Kalimantan Timur
+359,Kutai Timur,Kalimantan Timur
+360,Berau,Kalimantan Timur
+361,Penajam Paser Utara,Kalimantan Timur
+362,Mahakam Ulu,Kalimantan Timur
+363,Kota Balikpapan,Kalimantan Timur
+364,Kota Samarinda,Kalimantan Timur
+365,Kota Bontang,Kalimantan Timur
+366,Malinau,Kalimantan Utara
+367,Bulungan,Kalimantan Utara
+368,Tana Tidung,Kalimantan Utara
+369,Nunukan,Kalimantan Utara
+370,Kota Tarakan,Kalimantan Utara
+371,Bolaang Mongondow,Sulawesi Utara
+372,Minahasa,Sulawesi Utara
+373,Kepulauan Sangihe,Sulawesi Utara
+374,Kepulauan Talaud,Sulawesi Utara
+375,Minahasa Selatan,Sulawesi Utara
+376,Minahasa Utara,Sulawesi Utara
+377,Bolaang Mongondow Utara,Sulawesi Utara
+378,Siau Tagulandang Biaro,Sulawesi Utara
+379,Minahasa Tenggara,Sulawesi Utara
+380,Bolaang Mongondow Selatan,Sulawesi Utara
+381,Bolaang Mongondow Timur,Sulawesi Utara
+382,Kota Manado,Sulawesi Utara
+383,Kota Bitung,Sulawesi Utara
+384,Kota Tomohon,Sulawesi Utara
+385,Kota Kotamobagu,Sulawesi Utara
+386,Banggai Kepulauan,Sulawesi Tengah
+387,Banggai,Sulawesi Tengah
+388,Morowali,Sulawesi Tengah
+389,Poso,Sulawesi Tengah
+390,Donggala,Sulawesi Tengah
+391,Toli-Toli,Sulawesi Tengah
+392,Buol,Sulawesi Tengah
+393,Parigi Moutong,Sulawesi Tengah
+394,Tojo Una-Una,Sulawesi Tengah
+395,Sigi,Sulawesi Tengah
+396,Banggai Laut,Sulawesi Tengah
+397,Morowali Utara,Sulawesi Tengah
+398,Kota Palu,Sulawesi Tengah
+399,Kepulauan Selayar,Sulawesi Selatan
+400,Bulukumba,Sulawesi Selatan
+401,Bantaeng,Sulawesi Selatan
+402,Jeneponto,Sulawesi Selatan
+403,Takalar,Sulawesi Selatan
+404,Gowa,Sulawesi Selatan
+405,Sinjai,Sulawesi Selatan
+406,Maros,Sulawesi Selatan
+407,Pangkajene dan Kepulauan,Sulawesi Selatan
+408,Barru,Sulawesi Selatan
+409,Bone,Sulawesi Selatan
+410,Soppeng,Sulawesi Selatan
+411,Wajo,Sulawesi Selatan
+412,Sidenreng Rappang,Sulawesi Selatan
+413,Pinrang,Sulawesi Selatan
+414,Enrekang,Sulawesi Selatan
+415,Luwu,Sulawesi Selatan
+416,Tana Toraja,Sulawesi Selatan
+417,Luwu Utara,Sulawesi Selatan
+418,Luwu Timur,Sulawesi Selatan
+419,Toraja Utara,Sulawesi Selatan
+420,Kota Makasar,Sulawesi Selatan
+421,Kota Parepare,Sulawesi Selatan
+422,Kota Palopo,Sulawesi Selatan
+423,Buton,Sulawesi Tenggara
+424,Muna,Sulawesi Tenggara
+425,Konawe,Sulawesi Tenggara
+426,Kolaka,Sulawesi Tenggara
+427,Konawe Selatan,Sulawesi Tenggara
+428,Bombana,Sulawesi Tenggara
+429,Wakatobi,Sulawesi Tenggara
+430,Kolaka Utara,Sulawesi Tenggara
+431,Buton Utara,Sulawesi Tenggara
+432,Konawe Utara,Sulawesi Tenggara
+433,Kolaka Timur,Sulawesi Tenggara
+434,Konawe Kepulauan,Sulawesi Tenggara
+435,Muna Barat,Sulawesi Tenggara
+436,Buton Tengah,Sulawesi Tenggara
+437,Buton Selatan,Sulawesi Tenggara
+438,Kota Kendari,Sulawesi Tenggara
+439,Kota Baubau,Sulawesi Tenggara
+440,Boalemo,Gorontalo
+441,Gorontalo,Gorontalo
+442,Pohuwato,Gorontalo
+443,Bone Bolango,Gorontalo
+444,Gorontalo Utara,Gorontalo
+445,Kota Gorontalo,Gorontalo
+446,Majene,Sulawesi Barat
+447,Polewali Mandar,Sulawesi Barat
+448,Mamasa,Sulawesi Barat
+449,Mamuju,Sulawesi Barat
+450,Mamuju Utara / Pasangkayu,Sulawesi Barat
+451,Mamuju Tengah,Sulawesi Barat
+452,Maluku Tenggara Barat / Kepulauan Tanimbar,Maluku
+453,Maluku Tenggara,Maluku
+454,Maluku Tengah,Maluku
+455,Buru,Maluku
+456,Kepulauan Aru,Maluku
+457,Seram Bagian Barat,Maluku
+458,Seram Bagian Timur,Maluku
+459,Maluku Barat Daya,Maluku
+460,Buru Selatan,Maluku
+461,Kota Ambon,Maluku
+462,Kota Tual,Maluku
+463,Halmahera Barat,Maluku Utara
+464,Halmahera Tengah,Maluku Utara
+465,Kepulauan Sula,Maluku Utara
+466,Halmahera Selatan,Maluku Utara
+467,Halmahera Utara,Maluku Utara
+468,Halmahera Timur,Maluku Utara
+469,Pulau Morotai,Maluku Utara
+470,Pulau Taliabu,Maluku Utara
+471,Kota Ternate,Maluku Utara
+472,Kota Tidore Kepulauan,Maluku Utara
+473,Fakfak,Papua Barat
+474,Kaimana,Papua Barat
+475,Teluk Wondama,Papua Barat
+476,Teluk Bintuni,Papua Barat
+477,Manokwari,Papua Barat
+478,Sorong Selatan,Papua Barat
+479,Sorong,Papua Barat
+480,Raja Ampat,Papua Barat
+481,Tambrauw,Papua Barat
+482,Maybrat,Papua Barat
+483,Manokwari Selatan,Papua Barat
+484,Pegunungan Arfak,Papua Barat
+485,Kota Sorong,Papua Barat
+486,Raja Ampat,Papua Barat Daya
+487,Sorong,Papua Barat Daya
+488,Sorong Selatan,Papua Barat Daya
+489,Maybrat,Papua Barat Daya
+490,Tambrauw,Papua Barat Daya
+491,Kota Sorong,Papua Barat Daya
+492,Merauke,Papua
+493,Jayawijaya,Papua
+494,Jayapura,Papua
+495,Nabire,Papua
+496,Kepulauan Yapen,Papua
+497,Biak Numfor,Papua
+498,Paniai,Papua
+499,Puncak Jaya,Papua
+500,Mimika,Papua
+501,Boven Digoel,Papua
+502,Mappi,Papua
+503,Asmat,Papua
+504,Yahukimo,Papua
+505,Pegunungan Bintang,Papua
+506,Tolikara,Papua
+507,Sarmi,Papua
+508,Keerom,Papua
+509,Waropen,Papua
+510,Supiori,Papua
+511,Mamberamo Raya,Papua
+512,Nduga,Papua
+513,Lanny Jaya,Papua
+514,Mamberamo Tengah,Papua
+515,Yalimo,Papua
+516,Puncak,Papua
+517,Dogiyai,Papua
+518,Intan Jaya,Papua
+519,Deiyai,Papua
+520,Kota Jayapura,Papua
+521,Merauke,Papua Selatan
+522,Boven Digoel,Papua Selatan
+523,Mappi,Papua Selatan
+524,Asmat,Papua Selatan
+525,Mimika,Papua Tengah
+526,Dogiyai,Papua Tengah
+527,Deiyai,Papua Tengah
+528,Nabire,Papua Tengah
+529,Paniai,Papua Tengah
+530,Intan Jaya,Papua Tengah
+531,Puncak,Papua Tengah
+532,Puncak Jaya,Papua Tengah
+533,Nduga,Papua Pegunungan
+534,Jayawijaya,Papua Pegunungan
+535,Lanny Jaya,Papua Pegunungan
+536,Tolikara,Papua Pegunungan
+537,Mamberamo Tengah,Papua Pegunungan
+538,Yalimo,Papua Pegunungan
+539,Yahukimo,Papua Pegunungan
+540,Pegunungan Bintang,Papua Pegunungan
