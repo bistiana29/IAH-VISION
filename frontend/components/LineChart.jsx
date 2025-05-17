@@ -1,14 +1,28 @@
-import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
+import React from 'react';
+import {
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  ResponsiveContainer,
+} from 'recharts';
 
-const TransparentLineChart = ({ data }) => (
-  <ResponsiveContainer width="100%" height={300}>
-    <LineChart data={data}>
-      <XAxis dataKey="tahun" />
-      <YAxis />
-      <Tooltip />
-      <Line type="monotone" dataKey="nilai" stroke="#10b981" strokeWidth={2} />
-    </LineChart>
-  </ResponsiveContainer>
-);
+const CustomLineChart = ({ data }) => {
+  return (
+    <div style={{ width: '100%', height: 300 }}>
+      <ResponsiveContainer>
+        <LineChart data={data}>
+          <CartesianGrid stroke="#eee" strokeDasharray="5 5" />
+          <XAxis dataKey="tahun" />
+          <YAxis />
+          <Tooltip />
+          <Line type="monotone" dataKey="nilai" stroke="#8884d8" />
+        </LineChart>
+      </ResponsiveContainer>
+    </div>
+  );
+};
 
-export default TransparentLineChart;
+export default CustomLineChart;
