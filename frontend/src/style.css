@@ -1,0 +1,337 @@
+/* Reset dasar */
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+  background-color: #303030;
+  color: white;
+  overflow-x: hidden;
+}
+
+/* Wrapper untuk seluruh halaman agar scroll vertikal aktif */
+.landing-wrapper {
+  height: 100vh;
+  width: 100vw;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Kontainer utama */
+.landing-page {
+  display: flex;
+  width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 35vw;
+  background-color: #303030;
+  padding: 170px 30px 40px 30px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #555;
+  color: white;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Logo dan judul */
+.logo-title-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin-bottom: 20px;
+  z-index: 2;
+  position: relative;
+  padding-left: 10px;
+}
+
+.logo {
+  width: 100px;
+  height: auto;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.title-with-lines {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 5px;
+}
+
+/* Judul */
+.title-with-lines h1 {
+  font-weight: 700;
+  font-size: 2.2rem;
+  margin: 0;
+  line-height: 1.1;
+  color: white;
+}
+
+.blue-text {
+  color: #64b5f6;
+}
+
+/* Deskripsi dan sambutan */
+.description {
+  margin-top: 20px;
+  font-weight: 400;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  max-width: 280px;
+}
+
+.welcome-text {
+  margin-top: 40px;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+/* Tombol umpan balik vertikal */
+.feedback-button {
+  position: fixed;  /* Fixed position so it stays in place while scrolling */
+  left: 10px;  /* Adds space from the left */
+  bottom: 20px;  /* Positioned at the bottom */
+  background-color: #445a8b;
+  color: white;
+  padding: 10px 20px;  /* Increased padding for better button size */
+  cursor: pointer;
+  font-weight: 700;
+  border-radius: 8px;
+  border: none;
+  z-index: 1000;  /* Ensures it stays on top of other elements */
+  font-size: 1rem; /* Adjust font size */
+  text-align: center;  /* Align text to the center */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);  /* Adding shadow for better visibility */
+}
+
+/* Hover effect for button */
+.feedback-button:hover {
+  background-color: #35507d;  /* Change color on hover */
+}
+
+/* KONTEN UTAMA */
+.main-content {
+  width: 65vw;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px 40px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  overflow-x: hidden;
+  margin-left: 100px;  /* Added margin for better spacing from sidebar */
+  padding-bottom: 200px;  /* Added padding to the bottom to give space for Umpan Balik button */
+}
+
+/* Navigasi atas */
+.top-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 129px;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  box-sizing: border-box;
+  gap: 40px;
+  font-weight: 700;
+  color: white;
+  z-index: 1000;
+}
+
+.nav-logo {
+  width: 200px; /* ukuran logo bisa disesuaikan */
+  height: auto;
+}
+
+.nav-links {
+  display: flex;
+  gap: 40px;
+  justify-content: flex-start; /* link mulai dari kiri container */
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+/* Tombol swipe ke kiri */
+.btn-swipe-left {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 70px;
+  background-color: #64b5f6;
+  color: white;
+  font-weight: 700;
+  font-size: 1.8rem;
+  border: none;
+  border-radius: 0 8px 8px 0;
+  cursor: pointer;
+  z-index: 20;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.35);
+  user-select: none;
+}
+
+.btn-swipe-left:hover {
+  background-color: #4a8dd6;
+}
+
+/* Kartu data indikator */
+.data-cards {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding-bottom: 40px;
+  position: relative;
+  z-index: 10;
+  margin-top: 160px; /* untuk memberi ruang dari nav */
+}
+
+.card {
+  background-color: #202020;
+  width: 22%;
+  padding: 10px;
+  box-sizing: border-box;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.card h3 {
+  margin: 0 0 10px 0;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+/* Responsif opsional (tambahan) */
+@media screen and (max-width: 768px) {
+  .landing-page {
+    flex-direction: column;
+  }
+
+  .sidebar, .main-content {
+    width: 100vw;
+  }
+
+  .top-nav {
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .data-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+  }
+
+  .feedback-button {
+    display: none; /* sembunyikan untuk mobile */
+  }
+}
+
+/* PAGES IPM */
+.ipm-page {
+  display: flex;
+  flex-direction: row-reverse;  /* Swap the content and image position */
+  width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.ipm-main-content {
+  width: 70%;  /* Adjusted width for better balance */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 40px;
+  color: white;
+  margin-right: 0;  /* Remove margin to avoid blank space */
+  padding-bottom: 200px;  /* Padding for the bottom */
+}
+
+.ipm-title {
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: white;
+  margin-bottom: 20px;
+  margin-top: 100px;
+}
+
+.ipm-description {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: white;
+  max-width: 970px;
+  margin-bottom: 20px;
+}
+
+/* Container for the image */
+.ipm-image-container {
+  width: 60%;  /* Image container takes 40% of the page width */
+  height: 200vh;  /* Full height of the page */
+  background-image: url("../elements/icon_ipm.png");  /* Correct image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Feedback Button */
+.feedback-button {
+  position: fixed;
+  left: 10px;
+  bottom: 20px;
+  background-color: #445a8b;
+  color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: 700;
+  border-radius: 8px;
+  border: none;
+  z-index: 1000;
+}
+
+.feedback-button:hover {
+  background-color: #35507d;
+}
+
+/* Ensure no unnecessary gaps or padding */
+.ipm-page {
+  align-items: stretch;  /* Ensure content stretches without gaps */
+}
+
+.ipm-page > .main-content, .ipm-image-container {
+  flex-grow: 1;  /* Allow both content and image to fill the space */
+}
