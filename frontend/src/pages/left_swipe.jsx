@@ -1,15 +1,58 @@
 import React, { useState } from "react";
 import "./../style.css";
-import BarChartComponent from "../components/barchart";  // Assuming you have a BarChartComponent
+import RowChartComponent from "../components/rowchart";  // Import the RowChartComponent
 import logo from "../elements/logo.png"; // Logo for Navbar
-
-// Sample dynamic background images
 import bgIPM from "../elements/icon_ipm.png"; // IPM image for right side background
 
 export default function LeftSwipe() {
   const [year, setYear] = useState(2024);  // Default to 2024
-  const [provinceFilter, setProvinceFilter] = useState("all"); // Default to "all"
+  const [provinceFilter, setProvinceFilter] = useState("top10"); // Default to "top10" to show the top provinces
   
+  // The data for IPM values for 2024 and corresponding provinces
+  const ipmData = [
+    { province: "ACEH", ipm: 74.03 },
+    { province: "SUMATERA UTARA", ipm: 74.02 },
+    { province: "SUMATERA BARAT", ipm: 74.49 },
+    { province: "RIAU", ipm: 74.79 },
+    { province: "JAMBI", ipm: 73.43 },
+    { province: "SUMATERA SELATAN", ipm: 72.3 },
+    { province: "BENGKULU", ipm: 73.39 },
+    { province: "LAMPUNG", ipm: 71.81 },
+    { province: "KEP. BANGKA BELITUNG", ipm: 73.33 },
+    { province: "KEPULAUAN RIAU", ipm: 77.97 },
+    { province: "DKI JAKARTA", ipm: 83.08 },
+    { province: "JAWA BARAT", ipm: 74.43 },
+    { province: "JAWA TENGAH", ipm: 73.88 },
+    { province: "D I YOGYAKARTA", ipm: 81.55 },
+    { province: "JAWA TIMUR", ipm: 74.09 },
+    { province: "BANTEN", ipm: 74.48 },
+    { province: "BALI", ipm: 77.76 },
+    { province: "NUSA TENGGARA BARAT", ipm: 70.93 },
+    { province: "NUSA TENGGARA TIMUR", ipm: 67.39 },
+    { province: "KALIMANTAN BARAT", ipm: 70.13 },
+    { province: "KALIMANTAN TENGAH", ipm: 72.73 },
+    { province: "KALIMANTAN SELATAN", ipm: 73.03 },
+    { province: "KALIMANTAN TIMUR", ipm: 78.83 },
+    { province: "SULAWESI UTARA", ipm: 75.03 },
+    { province: "SULAWESI TENGAH", ipm: 71.56 },
+    { province: "SULAWESI SELATAN", ipm: 74.05 },
+    { province: "SULAWESI TENGGARA", ipm: 73.48 },
+    { province: "GORONTALO", ipm: 71.23 },
+    { province: "SULAWESI BARAT", ipm: 68.2 },
+    { province: "MALUKU", ipm: 71.57 },
+    { province: "MALUKU UTARA", ipm: 71.03 },
+    { province: "PAPUA BARAT", ipm: 67.02 },
+    { province: "PAPUA", ipm: 73 }
+  ];
+
+  // Filter the top 10 provinces based on the selected year and provinceFilter
+  const top10Provinces = ipmData
+    .sort((a, b) => b.ipm - a.ipm)  // Sort by IPM in descending order
+    .slice(0, 10); // Get the top 10 provinces
+
+  // Calculate the average IPM of the top 10 provinces
+  const averageIPM = top10Provinces.reduce((acc, { ipm }) => acc + ipm, 0) / top10Provinces.length;
+
   return (
     <div className="ipm-page">
       {/* Navbar */}
@@ -58,16 +101,15 @@ export default function LeftSwipe() {
 
         {/* Average Value */}
         <div className="average-value">
-          <p>Rata-rata IPM tahun {year}: <strong>75.6</strong></p>
+          <p>Rata-rata IPM tahun {year}: <strong>{averageIPM.toFixed(2)}</strong></p>
         </div>
 
-        {/* Bar Chart */}
-        <BarChartComponent year={year} provinceFilter={provinceFilter} />
+        {/* Row Chart */}
+        <RowChartComponent year={year} provinceFilter={provinceFilter} ipmData={top10Provinces} />
       </main>
 
       {/* IPM Image on the Right */}
       <div className="ipm-image-container" style={{ backgroundImage: `url(${bgIPM})` }}></div>
-
 
       {/* Feedback Button */}
       <button className="feedback-button">UMPAN BALIK</button>
