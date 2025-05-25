@@ -8,12 +8,12 @@ const MapCluster = ({ data }) => (
     {data.map((item, idx) => (
       <CircleMarker
         key={idx}
-        center={[item.lat, item.lon]}
+        center={[item.lat, item.lon]} // Coordinates for the marker
         radius={10}
         fillOpacity={0.6}
         color={item.clusterColor}
       >
-        <Tooltip>{item.kabupaten}</Tooltip>
+        <Tooltip>{item.province}</Tooltip>
       </CircleMarker>
     ))}
   </MapContainer>

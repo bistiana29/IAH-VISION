@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import "./../style.css";
-import RowChartComponent from "../components/rowchart";  // Import the RowChartComponent
+import { useNavigate } from "react-router-dom";
+import RowChartComponent from "../components/rowchartIPM";  // Import the RowChartComponent
 import logo from "../elements/logo.png"; // Logo for Navbar
 import bgIPM from "../elements/icon_ipm.png"; // IPM image for right side background
 
 export default function LeftSwipe() {
+  const navigate = useNavigate();
   const [year, setYear] = useState(2024);  // Default to 2024
   const [provinceFilter, setProvinceFilter] = useState("top10"); // Default to "top10" to show the top provinces
   
@@ -99,10 +101,10 @@ export default function LeftSwipe() {
           </select>
         </div>
 
-        {/* Average Value */}
+        {/* Average Value
         <div className="average-value">
           <p>Rata-rata IPM tahun {year}: <strong>{averageIPM.toFixed(2)}</strong></p>
-        </div>
+        </div> */}
 
         {/* Row Chart */}
         <RowChartComponent year={year} provinceFilter={provinceFilter} ipmData={top10Provinces} />
@@ -112,7 +114,7 @@ export default function LeftSwipe() {
       <div className="ipm-image-container" style={{ backgroundImage: `url(${bgIPM})` }}></div>
 
       {/* Feedback Button */}
-      <button className="feedback-button">UMPAN BALIK</button>
+      <button className="feedback-button" onClick={() => navigate("/umpan-balik")}>UMPAN BALIK</button>
     </div>
   );
 }

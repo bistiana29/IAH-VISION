@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import "./../style.css";
-import RowChartComponent from "../components/rowchart";  // Import the RowChartComponent
+import { useNavigate } from "react-router-dom";
+import RowChartComponent from "../components/rowchartAHH";  // Import the RowChartComponent
 import logo from "../elements/logo.png"; // Logo for Navbar
-import bgAHH from "../elements/icon_ahh.png"; // AHH image for the right side background
+import bgAHH from "../elements/baby.jpg"; // AHH image for the right side background
 
 export default function AHH() {
+  const navigate = useNavigate();
   const [year, setYear] = useState(2024);  // Default to 2024
   const [provinceFilter, setProvinceFilter] = useState("top10"); // Default to "top10" to show the top provinces
   
@@ -64,9 +66,9 @@ export default function AHH() {
       </nav>
 
       <main className="ipm-main-content" style={{ backgroundColor: "#64b5f6" }}>
-        <h1 className="ipm-title">INDEKS AHH</h1>
+        <h1 className="ipm-title">ANGKA HARAPAN HIDUP</h1>
         <p className="ipm-description">
-          Indeks AHH (Aspek Hidup Sehat) digunakan untuk mengukur kualitas hidup sehat berdasarkan berbagai faktor terkait standar hidup sehat dan harapan hidup.
+          Angka Harapan Hidup (AHH) adalah rata-rata perkiraan tahun yang dapat dijalani seseorang sejak lahir. Faktor-faktor yang dapat memengaruhi AHH, di antaranya: Pola hidup sehat, Program pembangunan kesehatan, Program pemberantasan kemiskinan, Program kesehatan lingkungan, Program kecukupan gizi dan kalori, dll.
         </p>
         
         {/* Year Filter */}
@@ -99,10 +101,10 @@ export default function AHH() {
           </select>
         </div>
 
-        {/* Average Value */}
+        {/* Average Value
         <div className="average-value">
           <p>Rata-rata AHH tahun {year}: <strong>{averageAHH.toFixed(2)}</strong></p>
-        </div>
+        </div> */}
 
         {/* Row Chart */}
         <RowChartComponent year={year} provinceFilter={provinceFilter} ipmData={top10Provinces} />
@@ -112,7 +114,7 @@ export default function AHH() {
       <div className="ipm-image-container" style={{ backgroundImage: `url(${bgAHH})` }}></div>
 
       {/* Feedback Button */}
-      <button className="feedback-button">UMPAN BALIK</button>
+      <button className="feedback-button" onClick={() => navigate("/umpan-balik")}>UMPAN BALIK</button>
     </div>
   );
 }
