@@ -38,6 +38,7 @@ INSERT INTO provinsi(id_provinsi, provinsi) VALUES (30,'MALUKU');
 INSERT INTO provinsi(id_provinsi, provinsi) VALUES (31,'MALUKU UTARA');
 INSERT INTO provinsi(id_provinsi, provinsi) VALUES (32,'PAPUA BARAT');
 INSERT INTO provinsi(id_provinsi, provinsi) VALUES (33,'PAPUA');
+INSERT INTO provinsi(id_provinsi, provinsi) VALUES (34,'INDONESIA');
 
 --2. Create abel ahh--
 CREATE TABLE ahh (
@@ -93,6 +94,7 @@ INSERT INTO ahh(id_ahh,id_provinsi,ahh_2010,ahh_2011,ahh_2012,ahh_2013,ahh_2014,
 INSERT INTO ahh(id_ahh,id_provinsi,ahh_2010,ahh_2011,ahh_2012,ahh_2013,ahh_2014,ahh_2015,ahh_2016,ahh_2017,ahh_2018,ahh_2019,ahh_2020,ahh_2021,ahh_2022,ahh_2023,ahh_2024) VALUES ('AHH031',31,66.745,66.925,67.1,67.295,67.395,67.49,67.515,67.545,67.805,68.21,68.375,68.495,68.815,69.155,69.32);
 INSERT INTO ahh(id_ahh,id_provinsi,ahh_2010,ahh_2011,ahh_2012,ahh_2013,ahh_2014,ahh_2015,ahh_2016,ahh_2017,ahh_2018,ahh_2019,ahh_2020,ahh_2021,ahh_2022,ahh_2023,ahh_2024) VALUES ('AHH032',32,64.635,64.8,64.93,65.095,65.18,65.23,65.24,65.265,65.5,65.895,66.05,66.19,66.49,66.845,67.1);
 INSERT INTO ahh(id_ahh,id_provinsi,ahh_2010,ahh_2011,ahh_2012,ahh_2013,ahh_2014,ahh_2015,ahh_2016,ahh_2017,ahh_2018,ahh_2019,ahh_2020,ahh_2021,ahh_2022,ahh_2023,ahh_2024) VALUES ('AHH033',33,64.35,64.5,64.645,64.805,64.885,65.135,65.215,65.225,65.445,65.69,65.835,65.97,66.25,66.49,68.775);
+INSERT INTO ahh(id_ahh, id_provinsi,ahh_2010, ahh_2011, ahh_2012, ahh_2013, ahh_2014, ahh_2015, ahh_2016, ahh_2017,ahh_2018, ahh_2019, ahh_2020, ahh_2021, ahh_2022, ahh_2023, ahh_2024) VALUES ('AHH034', 34,69.86, 70.055, 70.255, 70.45, 70.73, 70.855, 70.945, 71.11,71.245, 71.385, 71.525, 71.61, 71.88, 72.175, 72.265);
 
 --3. Create tabel ahs--
 CREATE TABLE ahs (
@@ -148,6 +150,7 @@ INSERT INTO ahs(id_ahs,id_provinsi,ahs_2010,ahs_2011,ahs_2012,ahs_2013,ahs_2014,
 INSERT INTO ahs(id_ahs,id_provinsi,ahs_2010,ahs_2011,ahs_2012,ahs_2013,ahs_2014,ahs_2015,ahs_2016,ahs_2017,ahs_2018,ahs_2019,ahs_2020,ahs_2021,ahs_2022,ahs_2023,ahs_2024) VALUES ('AHS031',31,11.74,11.79,12.19,12.48,12.72,13.1,13.45,13.56,13.62,13.63,13.67,13.68,13.73,13.74,13.75);
 INSERT INTO ahs(id_ahs,id_provinsi,ahs_2010,ahs_2011,ahs_2012,ahs_2013,ahs_2014,ahs_2015,ahs_2016,ahs_2017,ahs_2018,ahs_2019,ahs_2020,ahs_2021,ahs_2022,ahs_2023,ahs_2024) VALUES ('AHS032',32,11.1,11.21,11.45,11.67,11.87,12.06,12.26,12.47,12.53,12.72,12.91,13.13,13.21,13.34,13.17);
 INSERT INTO ahs(id_ahs,id_provinsi,ahs_2010,ahs_2011,ahs_2012,ahs_2013,ahs_2014,ahs_2015,ahs_2016,ahs_2017,ahs_2018,ahs_2019,ahs_2020,ahs_2021,ahs_2022,ahs_2023,ahs_2024) VALUES ('AHS033',33,8.57,8.92,9.11,9.58,9.94,9.95,10.23,10.54,10.83,11.05,11.08,11.11,11.14,11.15,13.72);
+INSERT INTO ahs(id_ahs,id_provinsi,ahs_2010,ahs_2011,ahs_2012,ahs_2013,ahs_2014,ahs_2015,ahs_2016,ahs_2017,ahs_2018,ahs_2019,ahs_2020,ahs_2021,ahs_2022,ahs_2023,ahs_2024) VALUES ('AHS034',34,11.29,11.44,11.68,12.10,12.39,12.55,12.72,12.85,12.91,12.95,12.98,13.08,13.10,13.15,13.21);
 
 --4. Create tabel rata-rata lama sekolah--
 CREATE TABLE rls (
@@ -203,6 +206,7 @@ INSERT INTO rls(id_rls,id_provinsi,rls_2010,rls_2011,rls_2012,rls_2013,rls_2014,
 INSERT INTO rls(id_rls,id_provinsi,rls_2010,rls_2011,rls_2012,rls_2013,rls_2014,rls_2015,rls_2016,rls_2017,rls_2018,rls_2019,rls_2020,rls_2021,rls_2022,rls_2023,rls_2024) VALUES ('RLS031',31,7.91,7.98,8.04,8.27,8.34,8.37,8.52,8.61,8.72,9,9.04,9.09,9.24,9.26,9.37);
 INSERT INTO rls(id_rls,id_provinsi,rls_2010,rls_2011,rls_2012,rls_2013,rls_2014,rls_2015,rls_2016,rls_2017,rls_2018,rls_2019,rls_2020,rls_2021,rls_2022,rls_2023,rls_2024) VALUES ('RLS032',32,6.77,6.82,6.87,6.91,6.96,7.01,7.06,7.15,7.27,7.44,7.6,7.69,7.84,7.93,7.86);
 INSERT INTO rls(id_rls,id_provinsi,rls_2010,rls_2011,rls_2012,rls_2013,rls_2014,rls_2015,rls_2016,rls_2017,rls_2018,rls_2019,rls_2020,rls_2021,rls_2022,rls_2023,rls_2024) VALUES ('RLS033',33,5.59,5.6,5.73,5.74,5.76,5.99,6.15,6.27,6.52,6.65,6.69,6.76,7.02,7.15,9.82);
+INSERT INTO rls(id_rls, id_provinsi,rls_2010, rls_2011, rls_2012, rls_2013, rls_2014, rls_2015, rls_2016, rls_2017,rls_2018, rls_2019, rls_2020, rls_2021, rls_2022, rls_2023, rls_2024) VALUES ('RLS034', 34,7.46, 7.52, 7.59, 7.61, 7.73, 7.84, 7.95, 8.10,8.17, 8.34, 8.48, 8.54, 8.69, 8.77, 8.85);
 
 --5. Create tabel ipm--
 CREATE TABLE ipm (
@@ -263,17 +267,8 @@ INSERT INTO ipm (
 ('IPM030',30,64.27,64.75,65.43,66.09,66.74,67.05,67.6,68.19,68.87,69.45,69.49,69.71,70.22,70.94,71.57),
 ('IPM031',31,62.79,63.19,63.93,64.78,65.18,65.91,66.63,67.2,67.76,68.7,68.49,68.76,69.47,70.21,71.03),
 ('IPM032',32,59.6,59.9,60.3,60.91,61.28,61.73,62.21,62.99,63.74,64.7,65.09,65.26,65.16,66.16,67.02),
-('IPM033',33,54.45,55.01,55.55,56.25,56.75,57.25,58.05,59.09,60.06,60.84,60.44,60.62,71.76,72.41,73);
-
-insert into ipm(
-	id_ipm, id_provinsi, ipm_2010, ipm_2011, ipm_2012,
-	ipm_2013, ipm_2014, ipm_2015, ipm_2016, ipm_2017,
-	ipm_2018, ipm_2019, ipm_2020, ipm_2021, ipm_2022,
-	ipm_2023, ipm_2024
-)
-values(
-	'IPM034',34,66.53,67.09,67.7,68.31,68.9,69.55,70.18,70.81,71.39,71.92,71.94,72.29,72.91,73.55,74.2
-)
+('IPM033',33,54.45,55.01,55.55,56.25,56.75,57.25,58.05,59.09,60.06,60.84,60.44,60.62,71.76,72.41,73),
+('IPM034',34,66.53,67.09,67.7,68.31,68.9,69.55,70.18,70.81,71.39,71.92,71.94,72.29,72.91,73.55,74.2);
 
 --6. CREATE TABLE ppk--
 CREATE TABLE ppk (
@@ -329,6 +324,7 @@ INSERT INTO ppk(id_ppk,id_provinsi,ppk_2010,ppk_2011,ppk_2012,ppk_2013,ppk_2014,
 INSERT INTO ppk(id_ppk,id_provinsi,ppk_2010,ppk_2011,ppk_2012,ppk_2013,ppk_2014,ppk_2015,ppk_2016,ppk_2017,ppk_2018,ppk_2019,ppk_2020,ppk_2021,ppk_2022,ppk_2023,ppk_2024) VALUES ('PPK031',31,6.813,6.935,7.059,7.200,7.234,7.423,7.545,7.792,7.980,8.308,8.032,8.140,8.398,8.834,9.320);
 INSERT INTO ppk(id_ppk,id_provinsi,ppk_2010,ppk_2011,ppk_2012,ppk_2013,ppk_2014,ppk_2015,ppk_2016,ppk_2017,ppk_2018,ppk_2019,ppk_2020,ppk_2021,ppk_2022,ppk_2023,ppk_2024) VALUES ('PPK032',32,6.677,6.709,6.732,6.896,6.944,7.064,7.175,7.493,7.816,8.125,8.086,7.929,8.101,8.404,8.805);
 INSERT INTO ppk(id_ppk,id_provinsi,ppk_2010,ppk_2011,ppk_2012,ppk_2013,ppk_2014,ppk_2015,ppk_2016,ppk_2017,ppk_2018,ppk_2019,ppk_2020,ppk_2021,ppk_2022,ppk_2023,ppk_2024) VALUES ('PPK033',33,6.251,6.303,6.349,6.394,6.416,6.469,6.637,6.996,7.159,7.336,6.954,6.955,7.146,7.562,11.037);
+INSERT INTO ppk(id_ppk, id_provinsi,ppk_2010, ppk_2011, ppk_2012, ppk_2013, ppk_2014, ppk_2015, ppk_2016, ppk_2017,ppk_2018, ppk_2019, ppk_2020, ppk_2021, ppk_2022, ppk_2023, ppk_2024) VALUES ('PPK034', 34,9.437, 9.647, 9.815, 9.858, 9.903, 10.150, 10.420, 10.664,11.059, 11.299, 11.013, 11.156, 11.479, 11.899, 12.341);
 
 --7. CREATE TABLE cluster--
 CREATE TABLE cluster (

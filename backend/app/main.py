@@ -8,10 +8,9 @@ import os
 
 app = FastAPI()
 
-# CORS agar ReactJS bisa akses
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Untuk development, nanti diganti domain frontend
+    allow_origins=["*"], 
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
