@@ -31,7 +31,7 @@ const LineChartComponent = ({ title, label, actualData, predictedData, color }) 
     labels: years,
     datasets: [
       {
-        label: `${label} (2010-2024)`,
+        label: `${label}`,
         data: actualData,
         borderColor: color.actual,
         backgroundColor: `${color.actual}33`,
@@ -40,15 +40,15 @@ const LineChartComponent = ({ title, label, actualData, predictedData, color }) 
         borderWidth: 2,
       },
       {
-        label: `Prediksi ${label} (2025-2026)`,
+        label: `Prediksi ${label}`,
         data: predictedData,
         borderColor: color.predicted,
         backgroundColor: `${color.predicted}66`,
         fill: false,
         pointStyle: "circle",
-        pointRadius: 5,
-        pointHoverRadius: 7,
-        borderWidth: 2,
+        pointRadius: 4,
+        pointHoverRadius: 5,
+        borderWidth: 0,
       },
     ],
   };

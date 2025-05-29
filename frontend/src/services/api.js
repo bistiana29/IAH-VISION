@@ -17,7 +17,25 @@ import axios from 'axios';
 const API_BASE = 'http://localhost:8000/api';
 
 export const getClusterData = async (year) => {
-  const res = await fetch(`${API_BASE}/cluster/${year}`);
-  if (!res.ok) throw new Error('Failed to fetch cluster data');
-  return res.json();
+  try {
+    const res = await fetch(`${API_BASE}/cluster/${year}`);
+    if (!res.ok) {
+      throw new Error(`HTTP error! status: ${res.status}`);
+    }
+    const data = await res.json();
+    return data;
+  } catch (error) {
+    console.error("Fetch cluster data error:", error);
+    throw error;
+  }
+};
+
+export const getPrediksiProvinsi = async (provinsi) => {
+  try {
+    const response = await axios.get(`${API_BASE}/forecast/provinsi/${provinsi}`);
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching prediction data:", error);
+    throw error;
+  }
 };
