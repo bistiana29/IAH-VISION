@@ -288,7 +288,17 @@ body, html, #root {
   margin-right: 0;  /* Remove margin to avoid blank space */
   padding-bottom: 200px;  /* Padding for the bottom */
 }
-
+.predict-main-content {
+  width: 100%;  /* Adjusted width for better balance */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 40px;
+  color: white;
+  margin-right: 0;  /* Remove margin to avoid blank space */
+  padding-bottom: 200px;  /* Padding for the bottom */
+}
 .ipm-title {
   font-weight: 700;
   font-size: 1.8rem;
