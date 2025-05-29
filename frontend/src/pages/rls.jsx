@@ -1,63 +1,59 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./../style.css";
 import { useNavigate } from "react-router-dom";
-import RowChartRLS from "../components/rowchartRLS";  // Correct import for RowChartRLS
-import logo from "../elements/logo.png"; // Logo for Navbar
-import bgAHS from "../elements/icon_rls.png"; // Image for the Right Side Background
+import RowChartRLS from "../components/rowChart";
+import logo from "../elements/logo.png";
+import bgRLS from "../elements/icon_rls.png";
+import { getFaktorData } from "../services/api";
 
 export default function RLS() {
   const navigate = useNavigate();
-  const [year, setYear] = useState(2024);  // Default to 2024
-  const [provinceFilter, setProvinceFilter] = useState("top10"); // Default to "top10" to show the top provinces
+  const [year, setYear] = useState(2024);
+  const [provinceFilter, setProvinceFilter] = useState("top10");
+  const [rlsData, setRlsData] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  // The data for RLS values (replace with your actual RLS data)
-  const rlsData = [
-    { province: "ACEH", rls: 9.64 },
-    { province: "SUMATERA UTARA", rls: 9.93 },
-    { province: "SUMATERA BARAT", rls: 9.44 },
-    { province: "RIAU", rls: 9.43 },
-    { province: "JAMBI", rls: 8.9 },
-    { province: "SUMATERA SELATAN", rls: 8.57 },
-    { province: "BENGKULU", rls: 9.04 },
-    { province: "LAMPUNG", rls: 8.36 },
-    { province: "KEP. BANGKA BELITUNG", rls: 8.33 },
-    { province: "KEPULAUAN RIAU", rls: 10.5 },
-    { province: "DKI JAKARTA", rls: 11.49 },
-    { province: "JAWA BARAT", rls: 8.87 },
-    { province: "JAWA TENGAH", rls: 8.02 },
-    { province: "D I YOGYAKARTA", rls: 9.92 },
-    { province: "JAWA TIMUR", rls: 8.28 },
-    { province: "BANTEN", rls: 9.23 },
-    { province: "BALI", rls: 9.54 },
-    { province: "NUSA TENGGARA BARAT", rls: 7.87 },
-    { province: "NUSA TENGGARA TIMUR", rls: 8.02 },
-    { province: "KALIMANTAN BARAT", rls: 7.78 },
-    { province: "KALIMANTAN TENGAH", rls: 8.81 },
-    { province: "KALIMANTAN SELATAN", rls: 8.62 },
-    { province: "KALIMANTAN TIMUR", rls: 10.02 },
-    { province: "SULAWESI UTARA", rls: 9.84 },
-    { province: "SULAWESI TENGAH", rls: 9.04 },
-    { province: "SULAWESI SELATAN", rls: 8.86 },
-    { province: "SULAWESI TENGGARA", rls: 9.42 },
-    { province: "GORONTALO", rls: 8.29 },
-    { province: "SULAWESI BARAT", rls: 8.15 },
-    { province: "MALUKU", rls: 10.26 },
-    { province: "MALUKU UTARA", rls: 9.37 },
-    { province: "PAPUA BARAT", rls: 7.86 },
-    { province: "PAPUA", rls: 9.82 }
-  ];
+  useEffect(() => {
+    const fetchRLSData = async () => {
+      setLoading(true);
+      try {
+        const data = await getFaktorData("rls", year, "all");
+        setRlsData(data);
+      } catch (error) {
+        console.error("Gagal memuat data RLS:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchRLSData();
+  }, [year]);
 
-  // Filter the top 10 provinces based on the selected year and provinceFilter
-  const top10Provinces = rlsData
-    .sort((a, b) => b.rls - a.rls)  // Sort by RLS in descending order
-    .slice(0, 10); // Get the top 10 provinces
+  const getFilteredData = () => {
+    const dataWithoutIndonesia = rlsData.filter(
+      (item) => item.provinsi.toUpperCase() !== "INDONESIA"
+    );
 
-  // Calculate the average RLS of the top 10 provinces
-  const averageRLS = top10Provinces.reduce((acc, { rls }) => acc + rls, 0) / top10Provinces.length;
+    if (provinceFilter === "top10") {
+      return [...dataWithoutIndonesia]
+        .sort((a, b) => b.nilai - a.nilai)
+        .slice(0, 10);
+    } else if (provinceFilter === "bottom10") {
+      return [...dataWithoutIndonesia]
+        .sort((a, b) => a.nilai - b.nilai)
+        .slice(0, 10);
+    }
+    return dataWithoutIndonesia;
+  };
+
+  const filteredData = getFilteredData();
+
+  const averageRLS =
+    filteredData.length > 0
+      ? filteredData.reduce((acc, cur) => acc + cur.nilai, 0) / filteredData.length
+      : 0;
 
   return (
     <div className="ipm-page">
-      {/* Navbar */}
       <nav className="top-nav">
         <img src={logo} alt="IAH Logo" className="nav-logo" />
         <a href="/" className="nav-link">BERANDA</a>
@@ -69,25 +65,26 @@ export default function RLS() {
         <h1 className="ipm-title">RATA-RATA LAMA SEKOLAH</h1>
         <p className="ipm-description">
           Rata-rata Lama Sekolah (RLS) adalah ukuran statistik yang dihitung oleh Badan Pusat Statistik (BPS) untuk mengukur lamanya pendidikan formal yang ditempuh oleh penduduk usia 15 tahun ke atas. Indikator ini menunjukkan rata-rata jumlah tahun yang dihabiskan oleh seseorang untuk menempuh semua jenis pendidikan yang pernah dijalani.
-          </p>
-        
-        {/* Year Filter */}
+        </p>
+
         <div className="filter">
           <label htmlFor="year">Tahun: </label>
           <select
             id="year"
             value={year}
-            onChange={(e) => setYear(e.target.value)}
+            onChange={(e) => setYear(parseInt(e.target.value))}
           >
-            {[...Array(15)].map((_, i) => (
-              <option key={i} value={2010 + i}>
-                {2010 + i}
-              </option>
-            ))}
+            {[...Array(15)].map((_, i) => {
+              const y = 2010 + i;
+              return (
+                <option key={y} value={y}>
+                  {y}
+                </option>
+              );
+            })}
           </select>
         </div>
 
-        {/* Province Filter */}
         <div className="filter">
           <label htmlFor="province">Provinsi: </label>
           <select
@@ -101,20 +98,27 @@ export default function RLS() {
           </select>
         </div>
 
-        {/* Average Value */}
         <div className="average-value">
-          <p>Rata-rata RLS tahun {year}: <strong>{averageRLS.toFixed(2)}</strong></p>
+          <p>Rata-rata Lama Sekolah tahun {year}: <strong>{averageRLS.toFixed(2)}</strong></p>
         </div>
 
-        {/* Row Chart */}
-        <RowChartRLS year={year} provinceFilter={provinceFilter} rlsData={top10Provinces} />
+        {loading ? (
+          <p>Memuat data...</p>
+        ) : (
+          <RowChartRLS
+            data={filteredData}
+            valueKey="nilai"
+            labelKey="provinsi"
+            title={`RLS Tahun ${year}`}
+          />
+        )}
       </main>
 
-      {/* RLS Image on the Right */}
-      <div className="ipm-image-container" style={{ backgroundImage: `url(${bgAHS})` }}></div>
+      <div className="ipm-image-container" style={{ backgroundImage: `url(${bgRLS})` }}></div>
 
-      {/* Feedback Button */}
-      <button className="feedback-button" onClick={() => navigate("/umpan-balik")}>UMPAN BALIK</button>
+      <button className="feedback-button" onClick={() => navigate("/umpan-balik")}>
+        UMPAN BALIK
+      </button>
     </div>
   );
 }

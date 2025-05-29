@@ -1,13 +1,15 @@
+from sqlalchemy import text, exc, Table, Column, Integer, String, Text, MetaData, insert, TIMESTAMP
+from app import connect_database, forecasting
 from fastapi import APIRouter, HTTPException
-from app.connect_database import engine
-from app import forecasting
-from sqlalchemy import text
+from pydantic import BaseModel, EmailStr
+from datetime import datetime
 from typing import Literal
 import pandas as pd
 import redis
 import json
 
 router = APIRouter()
+metadata = MetaData()
 
 redis_client = redis.Redis(host='localhost', port=6379, db=0, decode_responses=True)
 
@@ -72,114 +74,71 @@ async def get_cluster_data(year: int):
     """
 
     try:
-        df = pd.read_sql(text(query), engine)
+        df = pd.read_sql(text(query), connect_database.engine)
         if df.empty:
             raise HTTPException(status_code=404, detail=f"Tidak ada data untuk tahun {year}")
         return {"data": df.to_dict(orient="records")}
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error saat mengambil data: {str(e)}")
 
-# endpoint IPM
-@router.get("/ipm")
-def get_ipm_data(tahun: int = 2024, kategori: Literal["all", "top10", "bottom10"] = "all"):
-    column_name = f"ipm_{tahun}"
-    
+# endpoint factor
+@router.get("/{factor}/{year}/{category}")
+def get_factor_data(
+    factor: Literal["ipm", "ahh", "ahs", "rls", "ppk"],
+    year: int,
+    category: Literal["all", "top10", "bottom10"]
+):
+    column_name = f"{factor}_{year}"
+
     base_query = f"""
         SELECT p.id_provinsi, p.provinsi, a.{column_name}
-        FROM ipm a
+        FROM {factor} a
         JOIN provinsi p ON a.id_provinsi = p.id_provinsi
     """
 
-    if kategori == "top10":
+    if category == "top10":
         base_query += f" ORDER BY a.{column_name} DESC LIMIT 10"
-    elif kategori == "bottom10":
+    elif category == "bottom10":
         base_query += f" ORDER BY a.{column_name} ASC LIMIT 10"
 
-    with engine.connect() as connection:
-        result = connection.execute(text(base_query)).fetchall()
+    try:
+        with connect_database.engine.connect() as connection:
+            result = connection.execute(text(base_query)).fetchall()
+    except exc.SQLAlchemyError as e:
+        raise HTTPException(status_code=400, detail=f"Database error: {str(e)}")
 
-    return [{"id_provinsi": r[0], "provinsi": r[1], "nilai": r[2]} for r in result]
+    return [
+        {"id_provinsi": r[0], "provinsi": r[1], "nilai": r[2]}
+        for r in result
+    ]
 
-# endpoint AHH
-@router.get("/ahh")
-def get_ahh_data(tahun: int = 2024, kategori: Literal["all", "top10", "bottom10"] = "all"):
-    column_name = f"ahh_{tahun}"
-    
-    base_query = f"""
-        SELECT p.id_provinsi, p.provinsi, a.{column_name}
-        FROM ahh a
-        JOIN provinsi p ON a.id_provinsi = p.id_provinsi
-    """
+# endpoint feedback (umpan_baliks)
+umpan_baliks = Table(
+    "umpan_baliks", metadata,
+    Column("id_umpan_balik", Integer, primary_key=True, autoincrement=True),
+    Column("umpan_balik", Text, nullable=False),
+    Column("created_at", TIMESTAMP, default=datetime.utcnow),
+    Column("nama", String(255), nullable=True),
+    Column("email", String(255), nullable=True),
+)
 
-    if kategori == "top10":
-        base_query += f" ORDER BY a.{column_name} DESC LIMIT 10"
-    elif kategori == "bottom10":
-        base_query += f" ORDER BY a.{column_name} ASC LIMIT 10"
+metadata.create_all(bind=connect_database.engine)
 
-    with engine.connect() as connection:
-        result = connection.execute(text(base_query)).fetchall()
+# Schema untuk inputan user
+class UmpanBalik(BaseModel):
+    umpan_balik: str
+    nama: str | None = None
+    email: EmailStr | None = None
 
-    return [{"id_provinsi": r[0], "provinsi": r[1], "nilai": r[2]} for r in result]
-
-# endpoint AHS
-@router.get("/ahs")
-def get_ahs_data(tahun: int = 2024, kategori: Literal["all", "top10", "bottom10"] = "all"):
-    column_name = f"ahs_{tahun}"
-    
-    base_query = f"""
-        SELECT p.id_provinsi, p.provinsi, a.{column_name}
-        FROM ahs a
-        JOIN provinsi p ON a.id_provinsi = p.id_provinsi
-    """
-
-    if kategori == "top10":
-        base_query += f" ORDER BY a.{column_name} DESC LIMIT 10"
-    elif kategori == "bottom10":
-        base_query += f" ORDER BY a.{column_name} ASC LIMIT 10"
-
-    with engine.connect() as connection:
-        result = connection.execute(text(base_query)).fetchall()
-
-    return [{"id_provinsi": r[0], "provinsi": r[1], "nilai": r[2]} for r in result]
-
-# endpoint RLS
-@router.get("/rls")
-def get_rls_data(tahun: int = 2024, kategori: Literal["all", "top10", "bottom10"] = "all"):
-    column_name = f"rls_{tahun}"
-    
-    base_query = f"""
-        SELECT p.id_provinsi, p.provinsi, a.{column_name}
-        FROM rls a
-        JOIN provinsi p ON a.id_provinsi = p.id_provinsi
-    """
-
-    if kategori == "top10":
-        base_query += f" ORDER BY a.{column_name} DESC LIMIT 10"
-    elif kategori == "bottom10":
-        base_query += f" ORDER BY a.{column_name} ASC LIMIT 10"
-
-    with engine.connect() as connection:
-        result = connection.execute(text(base_query)).fetchall()
-
-    return [{"id_provinsi": r[0], "provinsi": r[1], "nilai": r[2]} for r in result]
-
-# endpoint ppk
-@router.get("/ppk")
-def get_ppk_data(tahun: int = 2024, kategori: Literal["all", "top10", "bottom10"] = "all"):
-    column_name = f"ppk_{tahun}"
-    
-    base_query = f"""
-        SELECT p.id_provinsi, p.provinsi, a.{column_name}
-        FROM ppk a
-        JOIN provinsi p ON a.id_provinsi = p.id_provinsi
-    """
-
-    if kategori == "top10":
-        base_query += f" ORDER BY a.{column_name} DESC LIMIT 10"
-    elif kategori == "bottom10":
-        base_query += f" ORDER BY a.{column_name} ASC LIMIT 10"
-
-    with engine.connect() as connection:
-        result = connection.execute(text(base_query)).fetchall()
-
-    return [{"id_provinsi": r[0], "provinsi": r[1], "nilai": r[2]} for r in result]
+@router.post("/umpan-balik")
+async def post_umpan_balik(data: UmpanBalik):
+    with connect_database.engine.connect() as conn:
+        stmt = insert(umpan_baliks).values(
+            umpan_balik=data.umpan_balik,
+            nama=data.nama,
+            email=data.email,
+            created_at=datetime.utcnow()
+        )
+        result = conn.execute(stmt)
+        conn.commit()
+    return {"message": "Umpan balik berhasil dikirim."}

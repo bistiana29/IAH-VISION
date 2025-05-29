@@ -21,7 +21,7 @@ export default function LandingPage() {
         </div>
 
         <p className="description">
-          Pernahkah Anda membayangkan sebuah peta masa depan bagi kemajuan bangsa? Impian itu menjadi kenyataan. Kami hadir sebagai jembatan antara data historis yang kaya dan wawasan masa depan yang transformatif untuk Indeks Pembangunan Manusia (IPM) Indonesia.
+          Pernahkah Anda membayangkan sebuah peta masa depan bagi kemajuan bangsa? Impian itu menjadi kenyataan. Kami hadir sebagai jembatan antara data historis yang kaya dan wawasan masa depan yang informatif untuk Indeks Pembangunan Manusia (IPM) Indonesia.
         </p>
 
         <h2 className="welcome-text">Selamat menjelajahi!</h2>

@@ -1,63 +1,61 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./../style.css";
 import { useNavigate } from "react-router-dom";
-import RowChartComponent from "../components/rowchartIPM";  // Import the RowChartComponent
-import logo from "../elements/logo.png"; // Logo for Navbar
-import bgIPM from "../elements/icon_ipm.png"; // IPM image for right side background
+import RowChartIPM from "../components/rowChart";  // Pastikan komponen ini ada
+import logo from "../elements/logo.png";
+import bgIPM from "../elements/icon_ipm.png";
+import { getFaktorData } from "../services/api";
 
-export default function LeftSwipe() {
+export default function IPM() {
   const navigate = useNavigate();
-  const [year, setYear] = useState(2024);  // Default to 2024
-  const [provinceFilter, setProvinceFilter] = useState("top10"); // Default to "top10" to show the top provinces
-  
-  // The data for IPM values for 2024 and corresponding provinces
-  const ipmData = [
-    { province: "ACEH", ipm: 74.03 },
-    { province: "SUMATERA UTARA", ipm: 74.02 },
-    { province: "SUMATERA BARAT", ipm: 74.49 },
-    { province: "RIAU", ipm: 74.79 },
-    { province: "JAMBI", ipm: 73.43 },
-    { province: "SUMATERA SELATAN", ipm: 72.3 },
-    { province: "BENGKULU", ipm: 73.39 },
-    { province: "LAMPUNG", ipm: 71.81 },
-    { province: "KEP. BANGKA BELITUNG", ipm: 73.33 },
-    { province: "KEPULAUAN RIAU", ipm: 77.97 },
-    { province: "DKI JAKARTA", ipm: 83.08 },
-    { province: "JAWA BARAT", ipm: 74.43 },
-    { province: "JAWA TENGAH", ipm: 73.88 },
-    { province: "D I YOGYAKARTA", ipm: 81.55 },
-    { province: "JAWA TIMUR", ipm: 74.09 },
-    { province: "BANTEN", ipm: 74.48 },
-    { province: "BALI", ipm: 77.76 },
-    { province: "NUSA TENGGARA BARAT", ipm: 70.93 },
-    { province: "NUSA TENGGARA TIMUR", ipm: 67.39 },
-    { province: "KALIMANTAN BARAT", ipm: 70.13 },
-    { province: "KALIMANTAN TENGAH", ipm: 72.73 },
-    { province: "KALIMANTAN SELATAN", ipm: 73.03 },
-    { province: "KALIMANTAN TIMUR", ipm: 78.83 },
-    { province: "SULAWESI UTARA", ipm: 75.03 },
-    { province: "SULAWESI TENGAH", ipm: 71.56 },
-    { province: "SULAWESI SELATAN", ipm: 74.05 },
-    { province: "SULAWESI TENGGARA", ipm: 73.48 },
-    { province: "GORONTALO", ipm: 71.23 },
-    { province: "SULAWESI BARAT", ipm: 68.2 },
-    { province: "MALUKU", ipm: 71.57 },
-    { province: "MALUKU UTARA", ipm: 71.03 },
-    { province: "PAPUA BARAT", ipm: 67.02 },
-    { province: "PAPUA", ipm: 73 }
-  ];
+  const [year, setYear] = useState(2024);
+  const [provinceFilter, setProvinceFilter] = useState("top10");
+  const [ipmData, setIpmData] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  // Filter the top 10 provinces based on the selected year and provinceFilter
-  const top10Provinces = ipmData
-    .sort((a, b) => b.ipm - a.ipm)  // Sort by IPM in descending order
-    .slice(0, 10); // Get the top 10 provinces
+  useEffect(() => {
+    const fetchIPMData = async () => {
+      setLoading(true);
+      try {
+        const data = await getFaktorData("ipm", year, "all");
+        setIpmData(data);
+      } catch (error) {
+        console.error("Gagal memuat data IPM:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchIPMData();
+  }, [year]);
 
-  // Calculate the average IPM of the top 10 provinces
-  const averageIPM = top10Provinces.reduce((acc, { ipm }) => acc + ipm, 0) / top10Provinces.length;
+  // Exclude "INDONESIA" dan filter berdasarkan provinceFilter
+  const getFilteredData = () => {
+    const dataWithoutIndonesia = ipmData.filter(
+      (item) => item.provinsi.toUpperCase() !== "INDONESIA"
+    );
+
+    if (provinceFilter === "top10") {
+      return [...dataWithoutIndonesia]
+        .sort((a, b) => b.nilai - a.nilai)
+        .slice(0, 10);
+    } else if (provinceFilter === "bottom10") {
+      return [...dataWithoutIndonesia]
+        .sort((a, b) => a.nilai - b.nilai)
+        .slice(0, 10);
+    }
+    return dataWithoutIndonesia;
+  };
+
+  const filteredData = getFilteredData();
+
+  // Kalkulasi rata-rata IPM (bisa ditampilkan kalau mau)
+  const averageIPM =
+    filteredData.length > 0
+      ? filteredData.reduce((acc, cur) => acc + cur.nilai, 0) / filteredData.length
+      : 0;
 
   return (
     <div className="ipm-page">
-      {/* Navbar */}
       <nav className="top-nav">
         <img src={logo} alt="IAH Logo" className="nav-logo" />
         <a href="/" className="nav-link">BERANDA</a>
@@ -70,24 +68,25 @@ export default function LeftSwipe() {
         <p className="ipm-description">
           Indeks Pembangunan Manusia (IPM) merupakan indikator komposit untuk mengukur capaian pembangunan kualitas hidup manusia. Pada tahun 1990, United Nations Development Programme (UNDP) membangun indeks ini untuk menekankan pentingnya manusia beserta sumber daya yang dimiliknya dalam pembangunan. Indeks ini terbentuk dari rata-rata ukur capaian tiga dimensi utama pembangunan manusia, yaitu umur panjang dan hidup sehat, pengetahuan, dan standar hidup layak. Dimensi umur panjang dan hidup sehat diukur dengan umur harapan hidup saat lahir. Dimensi pengetahuan diukur dengan rata-rata lama sekolah penduduk berusia 25 tahun ke atas dan harapan lama sekolah penduduk yang berumur 7 tahun. Sementara itu, dimensi standar hidup layak diukur dengan pengeluaran riil per kapita yang disesuaikan.
         </p>
-        
-        {/* Year Filter */}
+
         <div className="filter">
           <label htmlFor="year">Tahun: </label>
           <select
             id="year"
             value={year}
-            onChange={(e) => setYear(e.target.value)}
+            onChange={(e) => setYear(parseInt(e.target.value))}
           >
-            {[...Array(15)].map((_, i) => (
-              <option key={i} value={2010 + i}>
-                {2010 + i}
-              </option>
-            ))}
+            {[...Array(15)].map((_, i) => {
+              const y = 2010 + i;
+              return (
+                <option key={y} value={y}>
+                  {y}
+                </option>
+              );
+            })}
           </select>
         </div>
 
-        {/* Province Filter */}
         <div className="filter">
           <label htmlFor="province">Provinsi: </label>
           <select
@@ -101,20 +100,33 @@ export default function LeftSwipe() {
           </select>
         </div>
 
-        {/* Average Value
+        {/* Kalau mau tampilkan rata-rata, aktifkan bagian ini */}
+        
         <div className="average-value">
           <p>Rata-rata IPM tahun {year}: <strong>{averageIPM.toFixed(2)}</strong></p>
-        </div> */}
+        </div> 
+       
 
-        {/* Row Chart */}
-        <RowChartComponent year={year} provinceFilter={provinceFilter} ipmData={top10Provinces} />
+        {loading ? (
+          <p>Memuat data...</p>
+        ) : (
+          <RowChartIPM
+            data={filteredData}
+            valueKey="nilai"
+            labelKey="provinsi"
+            title={`IPM Tahun ${year}`}
+          />
+        )}
       </main>
 
-      {/* IPM Image on the Right */}
-      <div className="ipm-image-container" style={{ backgroundImage: `url(${bgIPM})` }}></div>
+      <div
+        className="ipm-image-container"
+        style={{ backgroundImage: `url(${bgIPM})` }}
+      ></div>
 
-      {/* Feedback Button */}
-      <button className="feedback-button" onClick={() => navigate("/umpan-balik")}>UMPAN BALIK</button>
+      <button className="feedback-button" onClick={() => navigate("/umpan-balik")}>
+        UMPAN BALIK
+      </button>
     </div>
   );
 }

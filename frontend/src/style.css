@@ -222,6 +222,7 @@ body, html, #root {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  cursor: pointer;
 }
 
 .card h3 {
@@ -278,15 +279,15 @@ body, html, #root {
 }
 
 .ipm-main-content {
-  width: 70%;  /* Adjusted width for better balance */
+  width: 95%;  /* Adjusted width for better balance */
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding: 40px;
+  padding: 20px;
   color: white;
   margin-right: 0;  /* Remove margin to avoid blank space */
-  padding-bottom: 200px;  /* Padding for the bottom */
+  padding-bottom: 80px;  /* Padding for the bottom */
 }
 .predict-main-content {
   width: 100%;  /* Adjusted width for better balance */

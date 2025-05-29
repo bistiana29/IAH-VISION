@@ -39,3 +39,13 @@ export const getPrediksiProvinsi = async (provinsi) => {
     throw error;
   }
 };
+
+export const getFaktorData = async (factor, year, category) => {
+  try {
+    const response = await axios.get(`${API_BASE}/${factor}/${year}/${category}`);
+    return response.data;
+  } catch (error) {
+    console.error(`Error fetching data for ${factor}:`, error);
+    throw error;
+  }
+};
