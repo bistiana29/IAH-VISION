@@ -1,11 +1,23 @@
+// // src/services/api.js
 import axios from 'axios';
 
-const API = axios.create({
-  baseURL: 'http://localhost:8000', // URL backend FastAPI
-});
+// const API_BASE = 'http://localhost:8000/api'; // ganti sesuai backend
 
-export const getAllData = (params) => API.get('/data', { params });
-export const getFactors = () => API.get('/factors');
-export const getPrediction = (year, region) => API.get(`/prediction/${year}`, { params: { region } });
-export const getClusters = (year) => API.get(`/clusters/${year}`);
-export const getRecommendations = () => API.get('/recommendations');
+// // export const getAHHData = async () => axios.get(`${API_BASE}/ahh`);
+// // export const getHLSData = async () => axios.get(`${API_BASE}/hls`);
+// // export const getRLSData = async () => axios.get(`${API_BASE}/rls`);
+// // export const getPPKData = async () => axios.get(`${API_BASE}/ppk`);
+// export const getClusterData = async (year) => {
+//   const res = await fetch(`${API_BASE}/cluster/${year}`);
+//   if (!res.ok) throw new Error('Failed to fetch cluster data');
+//   return res.json();
+// };
+// export const getPrediksi = async (input) => axios.post(`${API_BASE}/prediksi`, input);
+
+const API_BASE = 'http://localhost:8000/api';
+
+export const getClusterData = async (year) => {
+  const res = await fetch(`${API_BASE}/cluster/${year}`);
+  if (!res.ok) throw new Error('Failed to fetch cluster data');
+  return res.json();
+};
