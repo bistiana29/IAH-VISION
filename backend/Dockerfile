@@ -1,14 +1,9 @@
-FROM python:3.11-slim
+FROM python:3.10
 
 WORKDIR /app
 
-# Copy semua file
-COPY requirements.txt /app/
-COPY backend/app /app
-COPY data /app/data
-COPY .env /app/.env
+COPY . .
 
-RUN python -m pip install -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
-# Jalankan script input data saat container mulai
-CMD ["python", "db/input_to_database.py"]
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
