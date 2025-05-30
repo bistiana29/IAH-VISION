@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import "./../style.css";
 import { useNavigate } from "react-router-dom";
 import RowChartAHS from "../components/rowChart";  // Sesuaikan import
-import logo from "../elements/logo.png";
-import bgAHS from "../elements/icon_ahs.png";
+import logo from "../src/elements/logo.png";
+import bgAHS from "../src/elements/icon_ahs.png";
 import { getFaktorData } from "../services/api"; // Pastikan ada di api.js
 
 export default function AHS() {

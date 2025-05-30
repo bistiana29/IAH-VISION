@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import "./../style.css";
 import { useNavigate } from "react-router-dom";
 import RowChartRLS from "../components/rowChart";
-import logo from "../elements/logo.png";
-import bgRLS from "../elements/icon_rls.png";
+import logo from "../src/elements/logo.png";
+import bgRLS from "../src/elements/icon_rls.png";
 import { getFaktorData } from "../services/api";
 
 export default function RLS() {
