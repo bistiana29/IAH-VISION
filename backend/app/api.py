@@ -11,14 +11,12 @@ import json
 router = APIRouter()
 metadata = MetaData()
 
-redis_client = redis.Redis(host='localhost', port=6379, db=0, decode_responses=True)
-
 # endpoint forecasting
 @router.get("/forecast/provinsi/{provinsi_name}")
 async def forecast_by_provinsi(provinsi_name: str):
     key = f"forecast:{provinsi_name.lower()}"
 
-    cached_data = redis_client.get(key)
+    cached_data = connect_database.redis_client.get(key)
     if cached_data:
         return {"provinsi": provinsi_name, "data": json.loads(cached_data)}
 
@@ -42,7 +40,7 @@ async def forecast_by_provinsi(provinsi_name: str):
         data = df_forecast[df_forecast['provinsi'].str.lower() == provinsi_name.lower()][all_years].iloc[0].to_dict()
 
         result[factor] = data
-    redis_client.set(key, json.dumps(result), ex=864000)
+    connect_database.redis_client.set(key, json.dumps(result), ex=864000)
     return {"provinsi": provinsi_name, "data": result}
 
 # endpoint clustering
