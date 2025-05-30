@@ -41,8 +41,17 @@ const RowChart = ({ data, valueKey = "nilai", labelKey = "provinsi", title = "" 
     responsive: true,
     maintainAspectRatio: false,
     plugins: {
-      legend: { position: "top" },
-      title: { display: true, text: title },
+      legend: { 
+        position: "top",
+        labels: {
+          color: "#ffffff"
+        },
+      },
+      title: {
+         display: true, 
+         text: title,
+         color: "#ffffff"
+         },
     },
     scales: {
       x: {
@@ -51,6 +60,7 @@ const RowChart = ({ data, valueKey = "nilai", labelKey = "provinsi", title = "" 
       },
       y: {
         ticks: {
+          color: "#ffffff",
           font: {
             size: 12,
             weight: 'normal',
