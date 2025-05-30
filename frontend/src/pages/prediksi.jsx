@@ -41,7 +41,7 @@ export default function Prediksi() {
   "sumatera barat",
   "sumatera selatan",
   "sumatera utara",
-  "yogyakarta"
+  "di yogyakarta"
 
   ];
 
