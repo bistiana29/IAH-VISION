@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import "./../style.css";
 import { useNavigate } from "react-router-dom";
 import RowChartPPK from "../components/rowChart";
-import logo from "../src/elements/logo.png";
-import bgPPK from "../src/elements/icon_ppk.png";
+import logo from "../elements/logo.png";
+import bgPPK from "../elements/icon_ppk.png";
 import { getFaktorData } from "../services/api";
 
 export default function PPK() {

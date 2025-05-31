@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import "./../style.css";
 import { useNavigate } from "react-router-dom";
 import RowChartComponent from "../components/rowChart";
-import logo from "../src/elements/logo.png";
-import bgAHH from "../src/elements/baby.jpg";
+import logo from "../elements/logo.png";
+import bgAHH from "../elements/baby.jpg";
 import { getFaktorData } from "../services/api";
 
 export default function AHH() {
