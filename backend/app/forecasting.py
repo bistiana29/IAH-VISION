@@ -1,16 +1,14 @@
 import warnings
 warnings.filterwarnings("ignore")
 
+import mlflow
 import numpy as np
 import pandas as pd
-import mlflow
-from sqlalchemy import create_engine
 from darts import TimeSeries
 from darts.metrics import mape
+from app import connect_database
+from sqlalchemy import create_engine
 from darts.models import Theta, Prophet, LinearRegressionModel, NaiveDrift, NaiveSeasonal
-
-# Koneksi database PostgreSQL
-engine = create_engine("postgresql+psycopg2://postgres:postgres@localhost:5432/iahVision")
 
 # Atur URI MLflow
 mlflow.set_tracking_uri("file:///D:/6.Teknologi Web Service/IAH-VISION/mlruns")
@@ -21,7 +19,7 @@ def get_data_factor(factor: str) -> pd.DataFrame:
         FROM provinsi p
         JOIN {factor} f ON p.id_provinsi = f.id_provinsi
     """
-    df = pd.read_sql(query, engine)
+    df = pd.read_sql(query, connect_database.engine)
     df = df.loc[:, ~df.columns.duplicated()]
 
     # Rename kolom tahun (misal ipm_2010 jadi 2010)
