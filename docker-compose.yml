@@ -19,7 +19,9 @@ services:
       - REDIS_PORT=6379
     ports:
       - "8000:8000"
-      - "5000:5000" 
+    volumes:
+      - ./mlruns:/mlflow/mlruns
+    restart: unless-stopped
 
   frontend:
     build:
@@ -30,25 +32,55 @@ services:
       - backend
     ports:
       - "3001:80"
+    restart: unless-stopped
 
   db:
     image: postgres:14
     container_name: postgres_db
     environment:
-      POSTGRES_DB: iahVision
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
+      - POSTGRES_DB=iahVision
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
     ports:
       - "5433:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    restart: unless-stopped
 
   redis:
     image: redis:latest
     container_name: redis
     ports:
       - "6379:6379"
+    restart: unless-stopped
+
+  mlflow:
+    image: ghcr.io/mlflow/mlflow:v2.13.0
+    container_name: mlflow_ui
+    ports:
+      - "5001:5000"
+    volumes:
+      - ./mlruns:/mlflow/mlruns
+    command: >
+      mlflow ui
+      --backend-store-uri file:///mlflow/mlruns
+      --host 0.0.0.0
+      --port 5000
+    restart: unless-stopped
+
+  notebook:
+    image: jupyter/base-notebook
+    container_name: jupyter_notebook
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./notebooks:/home/jovyan/work
+    depends_on:
+      - mlflow
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
+    restart: unless-stopped
 
 volumes:
   postgres_data:
