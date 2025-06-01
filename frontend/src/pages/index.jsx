@@ -5,10 +5,10 @@ import bgLanding from "../elements/bg_landingpage.png"; // background image (sil
 import logo from "../elements/logo.png";
 
 // Tambahkan import untuk ikon-ikon card
-import iconAHH from "../elements/icon_ahh.png";
-import iconAHS from "../elements/icon_ahs.png";
-import iconRLS from "../elements/icon_rls.png";
-import iconPPK from "../elements/icon_ppk.png";
+import iconAHH from "../elements/icon_ahh2.png";
+import iconAHS from "../elements/icon_ahs2.png";
+import iconRLS from "../elements/icon_rls2.png";
+import iconPPK from "../elements/icon_ppk2.png";
 
 export default function LandingPage() {
   const navigate = useNavigate();  // Using navigate hook for programmatic routing
@@ -42,10 +42,14 @@ export default function LandingPage() {
 
       <main className="main-content" style={{ backgroundImage: `url(${bgLanding})` }}>
         <nav className="top-nav">
-          <img src={logo} alt="IAH Logo" className="nav-logo" />
+          <div className="nav-left">
+             <img src={logo} alt="IAH Logo" className="nav-logo" />           
+          </div>
+          <div className="nav-right">
           <a href="/" className="nav-link">BERANDA</a>
           <a href="/peta" className="nav-link">PETA</a>
           <a href="/prediksi" className="nav-link">PREDIKSI</a>
+          </div>
         </nav>
 
         <button

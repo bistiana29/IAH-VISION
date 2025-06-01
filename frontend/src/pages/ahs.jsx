@@ -59,10 +59,14 @@ export default function AHS() {
   return (
     <div className="ipm-page">
       <nav className="top-nav">
-        <img src="/images/logo.png" alt="IAH Logo" className="nav-logo" />
+        <div className="nav-left">
+          <img src="/images/logo.png" alt="IAH Logo" className="nav-logo" />
+        </div>
+        <div className="nav-right">
         <a href="/" className="nav-link">BERANDA</a>
         <a href="/peta" className="nav-link">PETA</a>
         <a href="/prediksi" className="nav-link">PREDIKSI</a>
+        </div>
       </nav>
 
       <main className="ipm-main-content" style={{ backgroundColor: "#64b5f6" }}>
