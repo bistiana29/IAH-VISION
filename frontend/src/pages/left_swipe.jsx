@@ -56,12 +56,16 @@ export default function IPM() {
 
   return (
     <div className="ipm-page">
-      <nav className="top-nav">
-        <img src={logo} alt="IAH Logo" className="nav-logo" />
-        <a href="/" className="nav-link">BERANDA</a>
-        <a href="/peta" className="nav-link">PETA</a>
-        <a href="/prediksi" className="nav-link">PREDIKSI</a>
-      </nav>
+        <nav className="top-nav">
+          <div className="nav-left">
+             <img src={logo} alt="IAH Logo" className="nav-logo" />           
+          </div>
+          <div className="nav-right">
+          <a href="/" className="nav-link">BERANDA</a>
+          <a href="/peta" className="nav-link">PETA</a>
+          <a href="/prediksi" className="nav-link">PREDIKSI</a>
+          </div>
+        </nav>
 
       <main className="ipm-main-content" style={{ backgroundColor: "#64b5f6" }}>
         <h1 className="ipm-title">INDEKS PEMBANGUNAN MANUSIA</h1>

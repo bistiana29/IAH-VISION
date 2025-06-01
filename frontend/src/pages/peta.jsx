@@ -43,12 +43,16 @@ export default function Peta() {
   return (
     <div className="ipm-page">
       {/* Navbar */}
-      <nav className="top-nav">
-        <img src={logo} alt="IAH Logo" className="nav-logo" />
-        <a href="/" className="nav-link">BERANDA</a>
-        <a href="/peta" className="nav-link">PETA</a>
-        <a href="/prediksi" className="nav-link">PREDIKSI</a>
-      </nav>
+        <nav className="top-nav">
+          <div className="nav-left">
+             <img src={logo} alt="IAH Logo" className="nav-logo" />           
+          </div>
+          <div className="nav-right">
+          <a href="/" className="nav-link">BERANDA</a>
+          <a href="/peta" className="nav-link">PETA</a>
+          <a href="/prediksi" className="nav-link">PREDIKSI</a>
+          </div>
+        </nav>
 
       <main className="predict-main-content" style={{ backgroundColor: "#64b5f6", minHeight: "100vh" }}>
         <h1 className="ipm-title">PETA CLUSTER</h1>
