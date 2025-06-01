@@ -72,7 +72,7 @@ export default function UmpanBalik() {
         minHeight: "100vh",
         color: "white",
         p: 4,
-        maxWidth: 600,
+        maxWidth: 400,
         mx: "auto",
       }}
     >
