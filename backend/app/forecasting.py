@@ -7,7 +7,6 @@ import pandas as pd
 from darts import TimeSeries
 from darts.metrics import mape
 from app import connect_database
-from sqlalchemy import create_engine
 from darts.models import Theta, Prophet, LinearRegressionModel, NaiveDrift, NaiveSeasonal
 
 # Atur URI MLflow

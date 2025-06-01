@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import "./../style.css";
 import { useNavigate } from "react-router-dom";
 import RowChartPPK from "../components/rowChart";
-import logo from "../elements/logo.png";
-import bgPPK from "../elements/icon_ppk.png";
+//import logo from "/images/logo.png";
+//import bgPPK from "/images/icon_ppk.png";
 import { getFaktorData } from "../services/api";
 
 export default function PPK() {
@@ -56,7 +56,7 @@ export default function PPK() {
   return (
     <div className="ipm-page">
       <nav className="top-nav">
-        <img src={logo} alt="IAH Logo" className="nav-logo" />
+        <img src="/images/logo.png" alt="IAH Logo" className="nav-logo" />
         <a href="/" className="nav-link">BERANDA</a>
         <a href="/peta" className="nav-link">PETA</a>
         <a href="/prediksi" className="nav-link">PREDIKSI</a>
@@ -117,10 +117,7 @@ export default function PPK() {
         )}
       </main>
 
-      <div
-        className="ipm-image-container"
-        style={{ backgroundImage: `url(${bgPPK})` }}
-      ></div>
+      <div className="ipm-image-container" style={{ backgroundImage: 'url("/images/icon_ppk.png")' }}></div>
 
       <button className="feedback-button" onClick={() => navigate("/umpan-balik")}>
         UMPAN BALIK

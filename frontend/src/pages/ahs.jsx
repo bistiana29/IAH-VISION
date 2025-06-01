@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import "./../style.css";
 import { useNavigate } from "react-router-dom";
 import RowChartAHS from "../components/rowChart";  // Sesuaikan import
-import logo from "../elements/logo.png";
-import bgAHS from "../elements/icon_ahs.png";
+//import logo from "/images/logo.png";
+//import bgAHS from "/images/icon_ahs.png";
 import { getFaktorData } from "../services/api"; // Pastikan ada di api.js
 
 export default function AHS() {
@@ -59,14 +59,14 @@ export default function AHS() {
   return (
     <div className="ipm-page">
       <nav className="top-nav">
-        <img src={logo} alt="IAH Logo" className="nav-logo" />
+        <img src="/images/logo.png" alt="IAH Logo" className="nav-logo" />
         <a href="/" className="nav-link">BERANDA</a>
         <a href="/peta" className="nav-link">PETA</a>
         <a href="/prediksi" className="nav-link">PREDIKSI</a>
       </nav>
 
       <main className="ipm-main-content" style={{ backgroundColor: "#64b5f6" }}>
-        <h1 className="ipm-title">INDEKS AHS</h1>
+        <h1 className="ipm-title">ANGKA HARAPAN SEKOLAH</h1>
         <p className="ipm-description">
           Angka Harapan Sekolah adalah indikator yang menunjukkan lamanya sekolah yang diharapkan akan dirasakan oleh anak pada usia tertentu di masa depan. Harapan Lama Sekolah dihitung berdasarkan data pendidikan yang dilaporkan oleh Badan Pusat Statistik (BPS).
         </p>
@@ -124,7 +124,7 @@ export default function AHS() {
         )}
       </main>
 
-      <div className="ipm-image-container" style={{ backgroundImage: `url(${bgAHS})` }}></div>
+      <div className="ipm-image-container" style={{ backgroundImage: 'url("/images/icon_ahs.png")' }}></div>
 
       <button className="feedback-button" onClick={() => navigate("/umpan-balik")}>
         UMPAN BALIK

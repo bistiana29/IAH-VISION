@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import "./../style.css";
 import { useNavigate } from "react-router-dom";
 import RowChartComponent from "../components/rowChart";
-import logo from "../elements/logo.png";
-import bgAHH from "../elements/baby.jpg";
+//import logo from "/images/logo.png";
+//import bgAHH from "/images/baby.jpg";
 import { getFaktorData } from "../services/api";
 
 export default function AHH() {
@@ -52,7 +52,7 @@ export default function AHH() {
   return (
     <div className="ipm-page">
       <nav className="top-nav">
-        <img src={logo} alt="IAH Logo" className="nav-logo" />
+        <img src="/images/logo.png" alt="IAH Logo" className="nav-logo" />
         <a href="/" className="nav-link">BERANDA</a>
         <a href="/peta" className="nav-link">PETA</a>
         <a href="/prediksi" className="nav-link">PREDIKSI</a>
@@ -106,7 +106,7 @@ export default function AHH() {
         )}
       </main>
 
-      <div className="ipm-image-container" style={{ backgroundImage: `url(${bgAHH})` }}></div>
+      <div className="ipm-image-container" style={{ backgroundImage: 'url("/images/baby.jpg")' }}></div>
 
       <button className="feedback-button" onClick={() => navigate("/umpan-balik")}>
         UMPAN BALIK

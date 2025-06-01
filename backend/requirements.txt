@@ -1,6 +1,6 @@
 fastapi
 uvicorn[standard]
-pydantic
+pydantic[email]
 sqlalchemy
 pandas
 redis
@@ -11,3 +11,4 @@ prophet
 scikit-learn
 matplotlib
 pystan
+psycopg2-binary

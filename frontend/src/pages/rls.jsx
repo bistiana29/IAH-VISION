@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import "./../style.css";
 import { useNavigate } from "react-router-dom";
 import RowChartRLS from "../components/rowChart";
-import logo from "../elements/logo.png";
-import bgRLS from "../elements/icon_rls.png";
+//import logo from "/images/logo.png";
+//import bgRLS from "/images/icon_rls.png";
 import { getFaktorData } from "../services/api";
 
 export default function RLS() {
@@ -55,7 +55,7 @@ export default function RLS() {
   return (
     <div className="ipm-page">
       <nav className="top-nav">
-        <img src={logo} alt="IAH Logo" className="nav-logo" />
+        <img src="/images/logo.png" alt="IAH Logo" className="nav-logo" />
         <a href="/" className="nav-link">BERANDA</a>
         <a href="/peta" className="nav-link">PETA</a>
         <a href="/prediksi" className="nav-link">PREDIKSI</a>
@@ -114,7 +114,7 @@ export default function RLS() {
         )}
       </main>
 
-      <div className="ipm-image-container" style={{ backgroundImage: `url(${bgRLS})` }}></div>
+      <div className="ipm-image-container" style={{ backgroundImage: 'url("/images/icon_rls.png")' }}></div>
 
       <button className="feedback-button" onClick={() => navigate("/umpan-balik")}>
         UMPAN BALIK
