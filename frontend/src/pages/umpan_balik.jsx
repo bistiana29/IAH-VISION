@@ -12,10 +12,16 @@ import {
 export default function UmpanBalik() {
   const navigate = useNavigate();
 
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState("");
+  const [responseMsg, setResponseMsg] = useState("");
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -25,17 +31,35 @@ export default function UmpanBalik() {
     e.preventDefault();
     setLoading(true);
     setError("");
+    setSuccess(false);
+    setResponseMsg("");
+
+    const payload = {
+      nama: form.name,
+      email: form.email,
+      umpan_balik: form.message,
+    };
+
     try {
-      const res = await fetch("https://your-backend-api.com/api/feedback", {
+      const res = await fetch("http://localhost:8000/api/umpan-balik", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
       });
-      if (!res.ok) throw new Error("Gagal mengirim umpan balik");
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.detail || "Gagal mengirim umpan balik");
+      }
+
       setSuccess(true);
+      setResponseMsg(data.message || "Umpan balik berhasil dikirim.");
       setForm({ name: "", email: "", message: "" });
     } catch (err) {
-      setError(err.message || "Terjadi kesalahan");
+      setError(err.message || "Terjadi kesalahan.");
     } finally {
       setLoading(false);
     }
@@ -67,7 +91,7 @@ export default function UmpanBalik() {
 
       {success && (
         <Alert severity="success" sx={{ mb: 2 }}>
-          Terima kasih atas umpan balik Anda!
+          {responseMsg}
         </Alert>
       )}
 

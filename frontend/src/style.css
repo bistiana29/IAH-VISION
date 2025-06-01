@@ -23,6 +23,9 @@ body, html, #root {
   width: 100vw;
   min-height: 100vh;
   overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  border: none;
 }
 
 /* SIDEBAR */
@@ -33,7 +36,9 @@ body, html, #root {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  border-right: 1px solid #555;
+  border-right: none;
+  outline: none;
+  overflow: hidden;
   color: white;
   position: relative;
   min-height: 100vh;
@@ -80,7 +85,7 @@ body, html, #root {
 
 /* Deskripsi dan sambutan */
 .description {
-  margin-top: 20px;
+  margin-top: 0px;
   font-weight: 400;
   font-size: 0.9rem;
   line-height: 1.4;
@@ -217,7 +222,7 @@ body, html, #root {
   box-sizing: border-box;
   text-align: center;
   border-radius: 8px;
-  min-height: 180px; /* Contoh, supaya semua kartu minimal tinggi sama */
+  min-height: 220px; /* Contoh, supaya semua kartu minimal tinggi sama */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -232,13 +237,20 @@ body, html, #root {
 }
 
 .card img {
-  width: 140px;
-  height: 180px;
-  object-fit: contain; /* atau cover, tergantung mau gimana tampilannya */
-  margin: 0 auto;    /* supaya gambar berada di tengah */
+  width: 100px;              /* ubah ke ukuran lebih kecil jika terlalu besar */
+  height: 120px;
+  object-fit: contain;       /* agar isi tetap proporsional */
+  margin-bottom: 10px;
+  margin-top: auto;
+  margin-left: auto;
+  margin-right: auto;
   display: block;
   border-radius: 4px;
+  background-color: white;   /* beri latar netral jika PNG transparan */
+  padding: 8px;              /* beri padding agar tidak terlalu mepet */
+  box-sizing: content-box;   /* padding tidak mengubah ukuran */
 }
+
 
 /* Responsif opsional (tambahan) */
 @media screen and (max-width: 768px) {

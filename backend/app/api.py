@@ -111,32 +111,28 @@ def get_factor_data(
     ]
 
 # endpoint feedback (umpan_baliks)
-umpan_baliks = Table(
-    "umpan_baliks", metadata,
-    Column("id_umpan_balik", Integer, primary_key=True, autoincrement=True),
-    Column("umpan_balik", Text, nullable=False),
-    Column("created_at", TIMESTAMP, default=datetime.utcnow),
-    Column("nama", String(255), nullable=True),
-    Column("email", String(255), nullable=True),
-)
-
-metadata.create_all(bind=connect_database.engine)
-
-# Schema untuk inputan user
 class UmpanBalik(BaseModel):
+    nama: str
+    email: EmailStr
     umpan_balik: str
-    nama: str | None = None
-    email: EmailStr | None = None
 
 @router.post("/umpan-balik")
 async def post_umpan_balik(data: UmpanBalik):
-    with connect_database.engine.connect() as conn:
-        stmt = insert(umpan_baliks).values(
-            umpan_balik=data.umpan_balik,
-            nama=data.nama,
-            email=data.email,
-            created_at=datetime.utcnow()
-        )
-        result = conn.execute(stmt)
-        conn.commit()
-    return {"message": "Umpan balik berhasil dikirim."}
+    try:
+        query = text("""
+            INSERT INTO umpan_baliks (nama, email, umpan_balik, created_at)
+            VALUES (:nama, :email, :umpan_balik, :created_at)
+        """)
+        
+        with connect_database.engine.begin() as conn:
+            conn.execute(query, {
+                "nama": data.nama,
+                "email": data.email,
+                "umpan_balik": data.umpan_balik,
+                "created_at": datetime.utcnow()
+            })
+        
+        return {"message": "Umpan balik berhasil dikirim."}
+    
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Gagal menyimpan umpan balik: {str(e)}")

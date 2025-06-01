@@ -4,9 +4,16 @@ import { useNavigate } from "react-router-dom";
 import bgLanding from "../elements/bg_landingpage.png"; // background image (silhouette people)
 import logo from "../elements/logo.png";
 
+// Tambahkan import untuk ikon-ikon card
+import iconAHH from "../elements/icon_ahh.png";
+import iconAHS from "../elements/icon_ahs.png";
+import iconRLS from "../elements/icon_rls.png";
+import iconPPK from "../elements/icon_ppk.png";
+
 export default function LandingPage() {
   const navigate = useNavigate();  // Using navigate hook for programmatic routing
 
+  console.log("iconAHH path:", iconAHH);
   return (
     <div className="landing-page">
       <aside className="sidebar">
@@ -35,16 +42,12 @@ export default function LandingPage() {
 
       <main className="main-content" style={{ backgroundImage: `url(${bgLanding})` }}>
         <nav className="top-nav">
-          {/* Logo di kiri atas */}
           <img src={logo} alt="IAH Logo" className="nav-logo" />
-          
-          {/* Links for the pages, navbar items can remain */}
           <a href="/" className="nav-link">BERANDA</a>
           <a href="/peta" className="nav-link">PETA</a>
           <a href="/prediksi" className="nav-link">PREDIKSI</a>
         </nav>
 
-        {/* Tombol swipe kiri */}
         <button
           className="btn-swipe-left"
           onClick={() => navigate("/ipm")}
@@ -52,23 +55,22 @@ export default function LandingPage() {
           &lt;&lt;
         </button>
 
-        {/* Empat kartu data di bagian bawah main */}
         <section className="data-cards">
           <div className="card" onClick={() => navigate("/ahh")}>
             <h3>ANGKA HARAPAN HIDUP</h3>
-            <img src="/src/elements/icon_ahh.png" alt="Angka Harapan Hidup" />
+            <img src={iconAHH} alt="Angka Harapan Hidup" />
           </div>
           <div className="card" onClick={() => navigate("/ahs")}>
             <h3>ANGKA HARAPAN SEKOLAH</h3>
-            <img src="/src/elements/icon_ahs.png" alt="Angka Harapan Sekolah" />
+            <img src={iconAHS} alt="Angka Harapan Sekolah" />
           </div>
           <div className="card" onClick={() => navigate("/rls")}>
             <h3>RATA-RATA LAMA SEKOLAH</h3>
-            <img src="/src/elements/icon_rls.png" alt="Rata-rata Lama Sekolah" />
+            <img src={iconRLS} alt="Rata-rata Lama Sekolah" />
           </div>
           <div className="card" onClick={() => navigate("/ppk")}>
             <h3>PENGELUARAN PER KAPITA</h3>
-            <img src="/src/elements/icon_ppk.png" alt="Pengeluaran Per Kapita" />
+            <img src={iconPPK} alt="Pengeluaran Per Kapita" />
           </div>
         </section>
       </main>
