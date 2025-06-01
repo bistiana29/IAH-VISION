@@ -10,7 +10,7 @@ from app import connect_database
 from darts.models import Theta, Prophet, LinearRegressionModel, NaiveDrift, NaiveSeasonal
 
 # Atur URI MLflow
-mlflow.set_tracking_uri("file:///D:/6.Teknologi Web Service/IAH-VISION/mlruns")
+mlflow.set_tracking_uri("http://mlflow:5000")
 
 def get_data_factor(factor: str) -> pd.DataFrame:
     query = f"""
