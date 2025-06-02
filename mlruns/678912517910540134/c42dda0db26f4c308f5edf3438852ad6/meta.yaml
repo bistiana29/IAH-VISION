@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/6.Teknologi Web Service/IAH-VISION/mlruns/678912517910540134/c42dda0db26f4c308f5edf3438852ad6/artifacts
+end_time: 1748780150554
+entry_point_name: ''
+experiment_id: '678912517910540134'
+lifecycle_stage: active
+run_id: c42dda0db26f4c308f5edf3438852ad6
+run_name: ahh_provinsi_7
+run_uuid: c42dda0db26f4c308f5edf3438852ad6
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1748780149711
+status: 3
+tags: []
+user_id: root

@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/6.Teknologi Web Service/IAH-VISION/mlruns/600093807082865163/54e94f4061ba421896d86503fcab865b/artifacts
+end_time: 1748576773067
+entry_point_name: ''
+experiment_id: '600093807082865163'
+lifecycle_stage: active
+run_id: 54e94f4061ba421896d86503fcab865b
+run_name: ahs_provinsi_28
+run_uuid: 54e94f4061ba421896d86503fcab865b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1748576772999
+status: 3
+tags: []
+user_id: Asus

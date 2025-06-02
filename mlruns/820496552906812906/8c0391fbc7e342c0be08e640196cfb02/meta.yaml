@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/6.Teknologi Web Service/IAH-VISION/mlruns/820496552906812906/8c0391fbc7e342c0be08e640196cfb02/artifacts
+end_time: 1748398422512
+entry_point_name: ''
+experiment_id: '820496552906812906'
+lifecycle_stage: active
+run_id: 8c0391fbc7e342c0be08e640196cfb02
+run_name: KMeans_2021
+run_uuid: 8c0391fbc7e342c0be08e640196cfb02
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1748398422419
+status: 3
+tags: []
+user_id: Asus

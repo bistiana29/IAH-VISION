@@ -1,0 +1,20 @@
+artifact_uri: file:///D:/6.Teknologi Web Service/IAH-VISION/mlruns/634160053107329329/90439ebd2a33416a810668c67f8cd40d/artifacts
+deleted_time: 1748413858827
+end_time: 1748413108003
+entry_point_name: ''
+experiment_id: '634160053107329329'
+lifecycle_stage: deleted
+run_id: 90439ebd2a33416a810668c67f8cd40d
+run_name: 'ipm_id_provinsi    12
+
+  id_provinsi    12
+
+  Name: 11, dtype: object'
+run_uuid: 90439ebd2a33416a810668c67f8cd40d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1748413107950
+status: 3
+tags: []
+user_id: Asus

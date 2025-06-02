@@ -347,7 +347,7 @@ body, html, #root {
 /* Container for the image */
 .ipm-image-container {
   width: 60%;  /* Image container takes 40% of the page width */
-  height: 176vh;  /* Full height of the page */
+  height: 183vh;  /* Full height of the page */
   background-image: url("../elements/icon_ipm.png");  /* Correct image path */
   background-size: cover;
   background-position: center;

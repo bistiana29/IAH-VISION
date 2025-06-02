@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/6.Teknologi Web Service/IAH-VISION/mlruns/943447931710388968/cc77e762a5e74cf7a7f551e10f59ee53/artifacts
+end_time: 1748843888002
+entry_point_name: ''
+experiment_id: '943447931710388968'
+lifecycle_stage: active
+run_id: cc77e762a5e74cf7a7f551e10f59ee53
+run_name: rls_provinsi_20
+run_uuid: cc77e762a5e74cf7a7f551e10f59ee53
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1748843887345
+status: 3
+tags: []
+user_id: root
