@@ -1,7 +1,7 @@
 import React from "react";
 import "./../style.css";
 import { useNavigate } from "react-router-dom";
-import bgLanding from "../elements/bg_landingpage.png"; // background image (silhouette people)
+import bgLanding from "../elements/bglanding3.jpg"; // background image (silhouette people)
 import logo from "../elements/logo.png";
 
 // Tambahkan import untuk ikon-ikon card

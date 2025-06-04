@@ -132,8 +132,8 @@ body, html, #root {
   justify-content: content;
   padding: 20px 40px;
   background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  background-size: 100% 100%;
+  background-position: 100% 100%;
   color: white;
   overflow-x: hidden;
   margin-left: 100px;  /* Added margin for better spacing from sidebar */
@@ -201,7 +201,7 @@ body, html, #root {
   transform: translate(-50%, -50%);
   width: 50px;
   height: 70px;
-  background-color: #64b5f6;
+  background-color: #303030;
   color: white;
   font-weight: 700;
   font-size: 1.8rem;
@@ -230,7 +230,7 @@ body, html, #root {
 
 .card {
   background-color: #202020;
-  opacity: 95%;
+  opacity: 100%;
   width: 22%;
   padding: 10px;
   box-sizing: border-box;
